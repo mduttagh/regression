@@ -1,0 +1,512 @@
+)
+qplot(
+Rate_Satis,
+data = sdfr,
+main = "Satisfaction Rate",
+xlab = "Scale",
+ylab = "Frequency"
+) +  geom_bar(fill = "cornflowerblue")
++ theme_minimal()
+qplot(
+DivSch,
+data = sdfr,
+main = "Div/School Counts",
+xlab = "Division_School",
+ylab = "Frequency"
+)  +  geom_bar(fill = "cornflowerblue")
++ theme_minimal()
+ggplot(data = sdfr, aes(x = Rate_Satis)) +
+geom_bar(fill = "cornflowerblue") +
+scale_x_discrete(drop = FALSE) +
+theme_minimal()
+dat <- data.frame(table(sdfr$Rate_Satis))
+g <- ggplot(data = dat, aes(x = Var1, y = Freq)) +
+geom_bar(
+stat = "identity",
+fill = "cornflowerblue",
+aes(y = Freq,
+ymax = Freq),
+position = "dodge"
+)  +
+geom_text(
+aes(
+x = Var1,
+y = Freq,
+ymin = -0.5,
+ymax = Freq,
+label = Freq,
+vjust = 1.25),
+position = position_dodge(width = 1)
+) +
+theme_minimal() +
+scale_y_continuous(labels = waiver()) + ggtitle("Satisfaction Score") + xlab("Likert Scale") +   ylab("Frequency") +   theme(text = element_text(size = 16))
+g
+g <- ggplot(data = dat, aes(x = Var1, y = Freq)) +
+geom_bar(
+stat = "identity",
+fill = "cornflowerblue",
+aes(y = Freq,
+ymax = Freq),
+position = "dodge"
+)  +
+geom_text(aes(
+x = Var1,
+y = Freq, ymin=-0.25,ymax=Freq,
+label = Freq,
+hjust = 1.25),
+position = position_dodge(width = 1)) +
+theme_minimal() +
+scale_y_continuous(labels = waiver()) + ggtitle("Satisfaction Score") + xlab("Likert Scale") +  ylab("Frequency") + coord_flip() +
+theme(text=element_text(size=16))
+g
+attach(sdfr)
+require(plyr)
+sdf_mean <- ddply(sdfr,"DivSch",summarize, divsch_mean = round(mean(Satis_Score,na.rm = TRUE),2),qual_mean=round(mean(Qual_Score,na.rm = TRUE),2))
+grp1 <- ggplot(data = sdf_mean, aes(x = DivSch, y = divsch_mean, fill = DivSch)) +
+geom_bar(
+stat = "identity",
+fill = "cornflowerblue",
+position = "dodge"
+)  +
+geom_text(aes(label = divsch_mean,
+hjust = 1.25),
+position = position_dodge(width = 1)) +
+theme_minimal() +
+scale_y_continuous(labels = waiver()) + ggtitle("Satisfaction Score by Division School") + xlab("Division-School") +  ylab("Score") + coord_flip() +
+theme(text=element_text(size=16))
+grp1
+grp2 <- ggplot(data = sdf_mean, aes(x = DivSch, y = qual_mean, fill = DivSch)) +
+geom_bar(
+stat = "identity",
+fill = "cornflowerblue",
+position = "dodge"
+)  +
+geom_text(aes(label = qual_mean,
+hjust = 1.25),
+position = position_dodge(width = 1)) +
+theme_minimal() +
+scale_y_continuous(labels = waiver()) + ggtitle("Quality Score by Division School") + xlab("Division-School") +  ylab("Score") + coord_flip() +
+theme(text=element_text(size=16))
+grp2
+require("tm")
+install.packages("tm")
+require("tm")
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+libs <-
+c("foreign", "plyr", "dplyr", "ggplot2", "RColorBrewer", "psych")
+sapply(libs, require, character.only = TRUE)
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+View(sdft)
+SC <- Corpus(DataframeSource(sdft))
+inspect(SC)
+summary(SC)
+str(sdft)
+?Corpus
+sdft[""]
+View(sdft)
+sdft[sdft==""] <- NA
+View(sdft)
+sdft <- na.omit(sdft)
+View(sdft)
+View(sdft)
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+sdft[sdft==""] <- NA
+sdft <- sdft[,colSums(is.na(sdft))==0]
+View(sdft)
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+sdft[sdft==""] <- NA
+SC <- Corpus(DataframeSource(sdft))
+inspect(SC)
+summary(SC)
+getTransformations()
+inspect(SC[1:2])
+getTransformations()
+Survey_Corpus <- tm_map(Survey_Corpus,content_transformer(tolower))
+Survey_Corpus <- tm_map(Survey_Corpus,content_transformer(removePunctuation))
+Survey_Corpus <- tm_map(Survey_Corpus,removeNumbers)
+Survey_Corpus <- tm_map(Survey_Corpus,removePunctuation)
+Survey_Corpus <- tm_map(Survey_Corpus,removeWords,stopwords(kind="en"))
+Survey_Corpus <- tm_map(Survey_Corpus,content_transformer(stripWhitespace))
+Survey_Corpus <- tm_map(Survey_Corpus,toSpace,"character(0)")
+Survey_Corpus <- tm_map(Survey_Corpus,toSpace,"/")
+Survey_Corpus <- tm_map(Survey_Corpus,toSpace,"@")
+Survey_Corpus <- tm_map(Survey_Corpus,toSpace,"\\|")
+SC <- tm_map(SC,content_transformer(tolower))
+SC <- tm_map(SC,content_transformer(removePunctuation))
+SC <- tm_map(SC,removeNumbers)
+SC <- tm_map(SC,removePunctuation)
+SC <- tm_map(SC,removeWords,stopwords(kind="en"))
+SC <- tm_map(SC,content_transformer(stripWhitespace))
+SC <- tm_map(SC,toSpace,"character(0)")
+SC <- tm_map(SC,toSpace,"/")
+SC <- tm_map(SC,toSpace,"@")
+SC <- tm_map(SC,toSpace,"\\|")
+toSpace <- content_transformer(function(x, pattern) {return (gsub(pattern, " ", x))})
+SC <- tm_map(SC,content_transformer(tolower))
+SC <- tm_map(SC,toSpace,"character(0)")
+SC <- tm_map(SC,toSpace,"/")
+SC <- tm_map(SC,toSpace,"@")
+SC <- tm_map(SC,toSpace,"\\|")
+SC <- tm_map(SC,removeWords,stopwords("english"))
+SC <- tm_map(SC,content_transformer(stripWhitespace))
+SC <- tm_map(SC,toSpace,"character(0)")
+SC <- tm_map(SC,toSpace,"/")
+SC <- tm_map(SC,toSpace,"@")
+SC <- tm_map(SC,toSpace,"\\|")
+writeLines(as.character(SC))
+SC <- tm_map(SC,toSpace,"NA")
+writeLines(as.character(SC))
+SC <- tm_map(SC,toSpace,NA)
+writeLines(as.character(SC))
+SC <- tm_map(SC,toSpace,c(NA))
+writeLines(as.character(SC))
+dictSurvey <- SC
+dS <- SC
+rm(dictSurvey)
+dS <- SC
+dtm <- DocumentTermMatrix(SC)
+inspect(dtm)
+dtm <- removeSparseTerms(dtm,0.94)
+inspect(dtm)
+findFreqTerms(dtm,lowfreq = 10)
+findFreqTerms(dtm,lowfreq = 1)
+writeLines(as.character(SC))
+dS <- SC
+dS <- tm_map(dS,stemDocument)
+writeLines(as.character(SC))
+SC <- tm_map(SC,stemCompletion,dictionary = dictSurvey)
+SC <- tm_map(SC,stemCompletion,dictionary = dS)
+SC <- tm_map(SC,PlainTextDocument)
+dtm <- DocumentTermMatrix(SC)
+dtm <- removeSparseTerms(dtm,0.94)
+inspect(dtm)
+dtm <- DocumentTermMatrix(SC)
+dtm <- removeSparseTerms(dtm,0.94)
+inspect(dtm)
+removeNumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
+SC <- tm_map(SC,content_transformer(removeNumPunct))
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+sdft[sdft==""] <- NA
+str(sdft)
+sdft <-  survey_csv1 %>%   select(starts_with("Text"))
+View(sdft)
+SC <- Corpus(DataframeSource(sdft))
+View(SC)
+inspect(SC)
+summary(SC)
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+getTransformations()
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+SC <- tm_map(SC,content_transformer(tolower))
+inspect(SC)
+summary(SC)
+writeLines(as.character(SC))
+removeNumPunct <- function(x) gsub("[^[:alpha:][:space:]]*", "", x)
+SC <- tm_map(SC,content_transformer(removeNumPunct))
+SC <- tm_map(SC,content_transformer(removePunctuation))
+SC <- tm_map(SC,removeNumbers)
+SC <- tm_map(SC,removePunctuation)
+SC <- tm_map(SC,removeWords,stopwords("english"))
+SC <- tm_map(SC,content_transformer(stripWhitespace))
+writeLines(as.character(SC))
+SC1 <- SC
+writeLines(as.character(SC))
+SC <- tm_map(SC,content_transformer(stripWhitespace))
+SC <- tm_map(SC,toSpace,"/")
+SC <- tm_map(SC,toSpace,"@")
+SC <- tm_map(SC,toSpace,"\\|")
+writeLines(as.character(SC))
+libs2 <- c("tm","tm.plugin.webmining","wordcloud","topicmodels","SnowballC")
+sapply(libs2, require, character.only = TRUE)
+dS <- SC
+dS <- tm_map(dS,stemDocument)
+writeLines(as.character(SC))
+writeLines(as.character(SC))
+stemCompletion2 <- function(x, dictionary) {
++ x <- unlist(strsplit(as.character(x), " "))
++ # Unexpectedly, stemCompletion completes an empty string to
++ # a word in dictionary. Remove empty string to avoid above issue.
++ x <- x[x != ""]
++ x <- stemCompletion(x, dictionary=dictionary)
++ x <- paste(x, sep="", collapse=" ")
++ PlainTextDocument(stripWhitespace(x))
++ }
+stemCompletion2 <- function(x, dictionary) {
+x <- unlist(strsplit(as.character(x), " "))
+# Unexpectedly, stemCompletion completes an empty string to
+# a word in dictionary. Remove empty string to avoid above issue.
+x <- x[x != ""]
+x <- stemCompletion(x, dictionary=dictionary)
+x <- paste(x, sep="", collapse=" ")
+PlainTextDocument(stripWhitespace(x))
+}
+SC <- tm_map(SC,stemCompletion2,dictionary = dS)
+SC <- Corpus(VectorSource(SC))
+dtm <- DocumentTermMatrix(SC)
+dtm
+inspect(dtm)
+findFreqTerms(dtm,lowfreq = 10)
+?removeSparseTerms
+findFreqTerms(dtm,lowfreq = 10)
+findFreqTerms(dtm,lowfreq = 20)
+findFreqTerms(dtm,lowfreq = 5)
+m <- as.matrix(dtm)
+wordFreq <- sort(rowSums(m),decreasing = TRUE)
+pal <- brewer.pal(8,"Dark2")
+set.seed(375)
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+findFreqTerms(dtm,lowfreq = 5)
+m <- as.matrix(dtm)
+wordFreq <- sort(rowSums(m),decreasing = TRUE)
+View(wordFreq)
+View(m)
+findFreqTerms(dtm,lowfreq = 5)
+grayLevls <- gray((wordFreq+10)/(max(wordFreq)+10))
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+grayLevls <- gray((wordFreq+10)/(max(wordFreq)+10))
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+dtm <- DocumentTermMatrix(SC,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+inspect(dtm)
+findFreqTerms(dtm,lowfreq = 5)
+install.packages("wordnet")
+require(wordnet)
+m <- as.matrix(dtm)
+View(m)
+dtm <- removeSparseTerms(dtm,0.94)
+m <- as.matrix(dtm)
+View(m)
+wordFreq <- sort(rowSums(m),decreasing = TRUE)
+View(wordFreq)
+View(wordFreq)
+SC1 <- SC
+SC <- Corpus(DataframeSource(sdft))
+inspect(SC)
+summary(SC)
+toSpace <- content_transformer(function (x , pattern ) gsub(pattern, " ", x))
+SC <- tm_map(SC,content_transformer(tolower))
+writeLines(as.character(SC))
+SC <- tm_map(SC,content_transformer(removeNumPunct))
+writeLines(as.character(SC))
+SC <- tm_map(SC,removePunctuation)
+SC <- tm_map(SC,removeNumbers)
+SC <- tm_map(SC,removeWords,stopwords("english"))
+SC <- tm_map(SC,stripWhitespace)
+writeLines(as.character(SC))
+SC1 <- SC
+writeLines(as.character(SC))
+dS <- SC
+stemCompletion2 <- function(x, dictionary) {
+x <- unlist(strsplit(as.character(x), " "))
+# Unexpectedly, stemCompletion completes an empty string to
+# a word in dictionary. Remove empty string to avoid above issue.
+x <- x[x != ""]
+x <- stemCompletion(x, dictionary=dictionary)
+x <- paste(x, sep="", collapse=" ")
+PlainTextDocument(stripWhitespace(x))
+}
+dS <- lapply(DS, stemCompletion2, dictionary=SC)
+dS <- lapply(dS, stemCompletion2, dictionary=SC)
+dS <- Corpus(VectorSource(dS))
+View(dS)
+writeLines(dS)
+writeLines(as.character(dS))
+inspect(dS)
+dtm <- DocumentTermMatrix(dS,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+inspect(dtm)
+dtm <- DocumentTermMatrix(dS) #,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+inspect(dtm)
+dtm <- DocumentTermMatrix(dS,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+inspect(dtm)
+dtm <- removeSparseTerms(dtm,0.94)
+inspect(dtm)
+dtm <- DocumentTermMatrix(dS,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+dtm <- removeSparseTerms(dtm,0.50)
+inspect(dtm)
+dtm <- DocumentTermMatrix(dS,list(stemming = TRUE, removePunctuation = TRUE))
+dtm
+inspect(dtm)
+idx <- which(dimnames(dtm)$Terms == "sys")
+inspect(dtm[idx+(0:5),101:110])
+idx <- which(dimnames(dtm)$Terms == "s")
+inspect(dtm[idx+(0:5),101:110])
+idx <- which(dimnames(dtm)$Terms == "r")
+inspect(dtm[idx+(0:5),101:110])
+idx <- which(dimnames(dtm)$Terms == "c")
+inspect(dtm[idx+(0:5),101:110])
+inspect(dtm)
+dtm <- t(dtm)
+inspect(dtm)
+findFreqTerms(dtm,lowfreq = 5)
+termFrequency <- rowSums(as.matrix(dtm))
+termFrequency <- subset(termFrequency,termFrequency>10)
+require(ggplot2)
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity") +
++ xlab("Terms") + ylab("Count") + coord_flip()
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity") +
+xlab("Terms") + ylab("Count") + coord_flip()
+df
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+View(df)
+termFrequency
+View(df)
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity") +
+xlab("Terms") + ylab("Count") + coord_flip()
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity",fill = "cornflowerblue") + xlab("Terms") + ylab("Count") + coord_flip()
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity",fill = "cornflowerblue") + xlab("Terms") + ylab("Count") + coord_flip() + theme_minimum()
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity",fill = "cornflowerblue") + xlab("Terms") + ylab("Count") + coord_flip() + theme_minimal()
+m <- as.matrix(dtm)
+View(m)
+wordFreq <- sort(rowSums(m),decreasing = TRUE)
+View(wordFreq)
+pal <- brewer.pal(8,"Dark2")
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+set.seed(375)
+pal <- brewer.pal(9,"BuGn")
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+warnings()
+View(m)
+pal <- brewer.pal(9,"Blue")
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+pal <- brewer.pal(9,"BuGn")
+pal <- pal[-(1:4)]
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = F, colors=pal)
+dtm2 <- removeSparseTerms(dtm,sparse=0.95)
+distMatrix <- dist(scale(m2))
+m2 <- as.matrix(dtm2)
+distMatrix <- dist(scale(m2))
+fit <- hclust(distMatrix, method="ward.D")
+plot(fit)
+rect.hclust(fit, k=10)
+(groups <- cutree(fit, k=10))
+pal <- brewer.pal(8,"Dark2")
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, scale=c(5,0.5),min.freq =3, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, scale=c(5,0.5),min.freq =3, rot.per=0.35, use.r.layout=FALSE, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, rot.per=0.35, use.r.layout=FALSE, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, rot.per=0.35, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, min.freq =3, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, scale=c(5,0.5),min.freq =3, rot.per=0.35, use.r.layout=FALSE, random.order = FALSE, colors=pal)
+wordcloud(words=names(wordFreq),freq = wordFreq, scale=c(5,0.5),max.words = 1000, min.freq =3, rot.per=0.35, use.r.layout=FALSE, random.order = FALSE, colors=pal)
+View(wordFreq)
+require("reshape2")
+require("lda")
+k <- 10
+N <- 116
+result <- lda.collapsed.gibbs.sampler(cora.documents,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+N <- 10
+result <- lda.collapsed.gibbs.sampler(cora.documents,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+N <- 9
+result <- lda.collapsed.gibbs.sampler(cora.documents,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+result <- lda.collapsed.gibbs.sampler(dtm2,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+result <- lda.collapsed.gibbs.sampler(fit,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+rect.hclust(fit, k=10)
+(groups <- cutree(fit, k=10))
+result <- lda.collapsed.gibbs.sampler(groups,
+K, ## Num clusters
+SC,
+25, ## Num iterations
+0.1,
+0.1,
+compute.log.likelihood=TRUE)
+fit <- hclust(distMatrix, method="ward.D")
+plot(fit)
+groups
+result <- lda.collapsed.gibbs.sampler(groups)
+result <- lda.collapsed.gibbs.sampler(groups,vocab = SC)
+dtm
+result <- lda.collapsed.gibbs.sampler(dS,vocab = SC)
+result <- lda.collapsed.gibbs.sampler(dS)
+result <- lda.collapsed.gibbs.sampler(dS,vocab = SC)
+k <- 10
+result <- lda.collapsed.gibbs.sampler(dS,vocab = SC,K)
+result <- lda.collapsed.gibbs.sampler(dS,vocab = dS,K)
+result <- lda.collapsed.gibbs.sampler(dS,K, vocab = dS,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(SC,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(m,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(m,K, vocab = df,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(SC1,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(m,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(m,K, vocab = m,25,0.1,0.1,compute.log.likelihood = TRUE)
+(groups <- cutree(fit, k=10))
+rect.hclust(fit, k=10)
+(groups <- cutree(fit, k=10))
+plot(fit)
+fit
+termFrequency
+dtm
+inspect(dtm)
+inspect(dS)
+writeLines(as.character(dS))
+inspect(dS)
+result <- lda.collapsed.gibbs.sampler(dS,K, vocab = m,25,0.1,0.1,compute.log.likelihood = TRUE)
+?lda.collapsed.gibbs.sampler
+View(m)
+View(dS)
+View(dtm)
+View(m)
+View(df)
+View(df)
+findFreqTerms(dtm,lowfreq = 5)
+termFrequency <- rowSums(as.matrix(dtm))
+termFrequency <- subset(termFrequency,termFrequency>2)
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity",fill = "cornflowerblue") + xlab("Terms") + ylab("Count") + coord_flip() + theme_minimal()
+termFrequency <- subset(termFrequency,termFrequency>8)
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+ggplot(df, aes(x=term, y=freq)) + geom_bar(stat="identity",fill = "cornflowerblue") + xlab("Terms") + ylab("Count") + coord_flip() + theme_minimal()
+termFrequency <- rowSums(as.matrix(dtm))
+termFrequency <- subset(termFrequency,termFrequency>5)
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+df <- data.frame(term=names(termFrequency), freq=termFrequency)
+K <- 10
+N <- 116
+df
+N <- 1
+View(df)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = m,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = SC,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = sD,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = dS,25,0.1,0.1,compute.log.likelihood = TRUE)
+result <- lda.collapsed.gibbs.sampler(df,K, vocab = df,25,0.1,0.1,compute.log.likelihood = TRUE)
+str(ls())
+rm(cora.documents)
+rm(cora.vocab)
+str(ls())
+savehistory("~/Google Drive/RStudio/Lynda/RHistoryWordCloudandTM.txt")

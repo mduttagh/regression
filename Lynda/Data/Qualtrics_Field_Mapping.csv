@@ -1,0 +1,169 @@
+Start Date,,,,,,,,,
+End Date,,,,,,,,,
+Response Type,,,,,,,,,
+IP Address,,,,,,,,,
+Progress,,,,,,,,,
+Duration (in seconds),,,,,,,,,
+Finished,,,,,,,,,
+Recorded Date,=,"""Recorded.Date""",,,,,,,
+Response ID,,,,,,,,,
+Recipient Last Name,,,,,,,,,
+Recipient First Name,,,,,,,,,
+Recipient Email,,,,,,,,,
+External Reference,,,,,,,,,
+DistributionChannel - Distribution Channel,,,,,,,,,
+Q1.2 - Please select your NYU Division/School:,=,"  ""Q1.2.DivSch""",,,,,,,
+Q1.2_13_TEXT - School,=,"  ""Q1.2.DivSch.TEXT""",,,,,,,
+Q1.2_12_TEXT - Others,=,"  ""Q1.2.DivSchOthers""",,,,,,,
+Q1.3 - Please select your primary role:,=,"  ""Q1.3.Role""",,,,,,,
+Q1.3_6_TEXT - Others,=,"  ""Q1.3.Role.TEXT""",,,,,,,
+Q2.1 - Please select all the major applications you use (multiple-selection):,=,"  ""Q2.1.1.BPA""","  ""Q2.1_2_Fin""","  ""Q2.1_3_HR""","  ""Q2.1_4_PubSaf""","  ""Q2.1_5_SIS""","  ""Q2.1_6_FundR""","  ""Q2.1_7_UDW""","  ""Q2.1_8_Others"""
+Q2.1_15_TEXT - Others,=,"  ""Q2.1.8.Others.TEXT""",,,,,,,
+"Q2.2_x35 - Business Process Applications
+
+(Payment Gateway, Receipt and Pledge Managem...",=,"  ""Q2.2.x35.Len.BPA""",,,,,,,
+"Q2.2_x4 - Financial
+
+(fame, Hyperion Planning, Hyperion Strategic Finance, DRM)",=,"  ""Q2.2.x4.Len.Fin""",,,,,,,
+"Q2.2_x6 - Human Resources
+
+(PeopleSync, myTime, iLearn, PeopleAdmin, PASS, HRIS Histo...",=,"  ""Q2.2.x6.Len.HR""",,,,,,,
+"Q2.2_x25 - Public Safety
+
+(Lenel, OneCard, NYU Traveler)",=,"  ""Q2.2.x25.Len.PubSaf""",,,,,,,
+"Q2.2_x13 - Student Information Systems
+
+(Albert/SIS)",=,"  ""Q2.2.x13.Len.SIS""",,,,,,,
+"Q2.2_x2 - Fund Raising
+
+(Advance)",=,"  ""Q2.2.x2.Len.FundR""",,,,,,,
+"Q2.2_x3 - University Data Warehouse
+
+(UDW, UDW+, Interactive Reporting (Brio))",=,"  ""Q2.2.x3.Len.UDW""",,,,,,,
+Q2.2_x15 - Others,=,"  ""Q2.2.x15.Len.Others""",,,,,,,
+Q2.2_x15_TEXT - Others,=,"  ""Q2.2.x15.Len.Others.TEXT""",,,,,,,
+"Q2.3_x35 - Business Process Applications
+
+(Payment Gateway, Receipt and Pledge Managem...",=,"  ""Q2.3.x35.Fre.BPA""",,,,,,,
+"Q2.3_x4 - Financial
+
+(fame, Hyperion Planning, Hyperion Strategic Finance, DRM)",=,"  ""Q2.3.x4.Fre.Fin""",,,,,,,
+"Q2.3_x6 - Human Resources
+
+(PeopleSync, myTime, iLearn, PeopleAdmin, PASS, HRIS Histo...",=,"  ""Q2.3.x6.Fre.HR""",,,,,,,
+"Q2.3_x25 - Public Safety
+
+(Lenel, OneCard, NYU Traveler)",=,"  ""Q2.3.x25.Fre.PubSaf""",,,,,,,
+"Q2.3_x13 - Student Information Systems
+
+(Albert/SIS)",=,"  ""Q2.3.x13.Fre.SIS""",,,,,,,
+"Q2.3_x2 - Fund Raising
+
+(Advance)",=,"  ""Q2.3.x2.Fre.FundR""",,,,,,,
+"Q2.3_x3 - University Data Warehouse
+
+(UDW, UDW+, Interactive Reporting (Brio))",=,"  ""Q2.3.x3.Fre.UDW""",,,,,,,
+Q2.3_x15 - Others,=,"  ""Q2.3.x15.Fre.Others""",,,,,,,
+Q2.3_x15_TEXT - Others,=,"  ""Q2.3.x15.Fre.Others.TEXT""    ,",,,,,,,
+"2_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.35.Rate.BPA.Confor""",,,,
+"2_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.35.Rate.BPA.Reliab""",,,,
+"2_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.35.Rate.BPA.Assur""",,,,
+"2_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.35.Rate.BPA.Partner""",,,,
+"2_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.35.Rate.BPA.Respons""",,,,
+"2_Q3.2 - <strong>Fund Raising</strong><br />
+(Advance) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.35.Text.BPA""",,,,
+"3_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.4.Rate.Fin.Confor""",,,,
+"3_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.4.Rate.Fin.Reliab""",,,,
+"3_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.4.Rate.Fin.Assur""",,,,
+"3_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.4.Rate.Fin.Partner""",,,,
+"3_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.4.Rate.Fin.Respons""  ,",,,,
+"3_Q3.2 - <strong>University Data Warehouse</strong><br />
+(UDW, UDW+, Interactive Reporting (Brio)) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.4.Text.Fin""",,,,
+"4_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.6.Rate.HR.Confor""",,,,
+"4_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.6.Rate.HR.Reliab""",,,,
+"4_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.6.Rate.HR.Assur""",,,,
+"4_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.6.Rate.HR.Partner""",,,,
+"4_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.6.Rate.HR.Respons""",,,,
+"4_Q3.2 - <strong>Financial</strong><br />
+(fame, Hyperion Planning, Hyperion Strategic Finance, DRM) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.6.Text.HR""",,,,
+"6_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.25.Rate.PubSaf.Confor""  ,",,,,
+"6_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.25.Rate.PubSaf.Reliab""  ,",,,,
+"6_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.25.Rate.PubSaf.Assur""    ,",,,,
+"6_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.25.Rate.PubSaf.Partner""  ,",,,,
+"6_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.25.Rate.PubSaf.Respons"",",,,,
+"6_Q3.2 - <strong>Human Resources</strong><br />
+(PeopleSync, myTime, iLearn, PeopleAdmin, PASS, HRIS History, BRC, OHM) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.25.Text.PubSaf""",,,,
+"13_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.13.Rate.SIS.Confor""",,,,
+"13_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.13.Rate.SIS.Reliab""",,,,
+"13_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.13.Rate.SIS.Assur""",,,,
+"13_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.13.Rate.SIS.Partner""",,,,
+"13_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.13.Rate.SIS.Respons""",,,,
+"13_Q3.2 - <strong>Student Information Systems</strong><br />
+(Albert/SIS) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.13.Text.SIS""",,,,
+"15_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.2.Rate.FundR.Confor""  ,",,,,
+"15_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.2.Rate.FundR.Reliab""  ,",,,,
+"15_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.2.Rate.FundR.Assur""    ,",,,,
+"15_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.2.Rate.FundR.Partner""  ,",,,,
+"15_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.2.Rate.FundR.Respons"" ,",,,,
+"15_Q3.2 - <strong>Others</strong> - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.2.Text.FundR""",,,,
+"25_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.3.Rate.UDW.Confor""",,,,
+"25_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.3.Rate.UDW.Reliab""",,,,
+"25_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.3.Rate.UDW.Assur""",,,,
+"25_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.3.Rate.UDW.Partner""",,,,
+"25_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.3.Rate.UDW.Respons""",,,,
+"25_Q3.2 - <strong>Public Safety</strong><br />
+(Lenel, OneCard, NYU Traveler) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.3.Text.UDW""",,,,
+"35_Q3.1_18 - Conformance
+(Conforms to customer's expectations and requirements)",=,,,,"  ""Q3.1.1.15.Rate.Others.Confor""",,,,
+"35_Q3.1_22 - Reliability
+(Ability to perform the promised service dependably and accurat...",=,,,,"  ""Q3.1.2.15.Rate.Others.Reliab""",,,,
+"35_Q3.1_25 - Assurance
+(Knowledge, competence and courtesy of staff and their ability to...",=,,,,"  ""Q3.1.3.15.Rate.Others.Assur""",,,,
+"35_Q3.1_27 - Partnership
+(Level of care, attention, access, communication and understand...",=,,,,"  ""Q3.1.4.15.Rate.Others.Partner""",,,,
+"35_Q3.1_14 - Responsiveness
+(Willingness or readiness of staff to provide service)",=,,,,"  ""Q3.1.5.15.Rate.Others.Respons""    ,",,,,
+"35_Q3.2 - <strong>Business Process Applications</strong><br />
+(Payment Gateway, Receipt and Pledge Management-RPM, AP Workflow, BUDMOD, JEMS, MODTRAK, Chartfield Access, Delegation of Authority, ServiceLink) - Please provide your comments/suggestions for ""Very Dissatisfied"" or ""Dissat...",=,,,,"  ""Q3.2.15.Text.Others""",,,,
+Q4.1 - Please rate your overall satisfaction with the major applications provided...,=,"  ""Q4.1.Rate.Satis""",,,,,,,
+Q4.2 - Please provide your overall comments/suggestions for improving the major ap...,=,"  ""Q4.2.TEXT.Satis""",,,,,,,
+Q5.2_First Click - First Click,,,,,,,,,
+Q5.2_Last Click - Last Click,,,,,,,,,
+Q5.2_Page Submit - Page Submit,,,,,,,,,
+Q5.2_Click Count - Click Count,,,,,,,,,
+SC0 - Score,,,,,,,,,
