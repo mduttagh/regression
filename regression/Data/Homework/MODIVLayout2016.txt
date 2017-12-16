@@ -1,0 +1,3281 @@
+------- FIELD LEVEL/NAME ---------- --PICTURE--    FLD  START     END  LENGTH 
+LIST-DATA-20-21-22                                          1     700     700 
+3 RECORD-KEY                          GROUP          1      1      35      35 
+  5 COUNTY-DISTRICT                   9(4)           2      1       4       4 
+  5 PROPERTY-ID                       GROUP          3      5      33      29 
+    7 BLOCK                           X(9)           4      5      13       9 
+    7 LOT                             X(9)           5     14      22       9 
+    7 QUALIFIER                       X(11)          6     23      33      11 
+  5 RECORD-ID                         99             7     34      35       2 
+3 LIST-DATA                           GROUP          8     36     700     665 
+  5 FILLER                            XX             9     36      37       2 
+  5 TRANSACTION-DATE-MMDDYY           9(6)          10     38      43       6 
+  5 TRANSACTION-UPDATE-NO             9(4)          11     44      47       4 
+  5 TAX-ACCOUNT-NUMBER                X(8)          12     48      55       8 
+  5 PROPERTY-CLASS                    XXX           13     56      58       3 
+  5 PROPERTY-LOCATION                 X(25)         14     59      83      25 
+  5 BUILDING-DESCRIPTION              X(15)         15     84      98      15 
+  5 LAND-DESCRIPTION                  X(20)         16     99     118      20 
+  5 CALCULATED-ACREAGE                9(5)V9(4)     17    119     127       9 
+  5 ADDITION-LOTS1                    X(20)         18    128     147      20 
+  5 ADDITION-LOTS2                    X(20)         19    148     167      20 
+  5 ZONING                            X(4)          20    168     171       4 
+  5 TAX-MAP-PAGE-NUMBER               X(4)          21    172     175       4 
+  5 OWNER-NAME                        X(35)         22    176     210      35 
+  5 STREET-ADDRESS                    X(25)         23    211     235      25 
+  5 CITY-STATE                        X(25)         24    236     260      25 
+  5 ZIP-CODE                          X(9)          25    261     269       9 
+  5 NUMBER-OF-OWNERS                  9(4)          26    270     273       4 
+  5 DEDUCTION-AMOUNT                  9(6)          27    274     279       6 
+  5 FILLER                            X             28    280     280       1 
+  5 BANK-CODE                         X(5)          29    281     285       5 
+  5 MORTGAGE-ACCOUNT-NUMBER           X(10)         30    286     295      10 
+  5 DEED-BOOK                         X(5)          31    296     300       5 
+  5 DEED-PAGE                         X(5)          32    301     305       5 
+  5 SALES-PRICE-CODE                  X             33    306     306       1 
+  5 CURRENT-SALES-DATA                GROUP         34    307     332      26 
+    7 DEED-DATE-MMDDYY                9(6)          35    307     312       6 
+    7 SALE-PRICE                      9(9)          36    313     321       9 
+    7 SALE-ASSESSMENT                 9(9)          37    322     330       9 
+    7 SALE-SR1A-UN-CODE               XX            38    331     332       2 
+  5 REBATE-DATA                       GROUP         39    333     359      27 
+    7 SOCIAL-SECURITY-NO              X(9)          40    333     341       9 
+    7 SCHOOL-TAX-OVERAGE              S9(7)V99      41    342     350       9 
+    7 NO-OF-DWELLINGS                 XX            42    351     352       2 
+    7 NO-OF-COMMERCIAL-DW             XX            43    353     354       2 
+    7 MULTIPLE-OCCUPANCY              X             44    355     355       1 
+    7 PERCENT-OWNED-CODE              X             45    356     356       1 
+    7 REBATE-CODE                     XX            46    357     358       2 
+    7 DELINQUENT-CODE                 X             47    359     359       1 
+------- FIELD LEVEL/NAME ---------- --PICTURE--    FLD  START     END  LENGTH 
+  5 EXEMPT-DATA                       GROUP         48    360     410      51 
+    7 EXEMPT-PROPERTY-LIST-CODE       GROUP         49    360     366       7 
+      9 EPL-OWN                       XX            50    360     361       2 
+      9 EPL-USE                       XX            51    362     363       2 
+      9 EPL-DESC                      XXX           52    364     366       3 
+    7 INITIAL-DATE-MMDDYY             9(6)          53    367     372       6 
+    7 FURTHER-DATE-MMDDYY             9(6)          54    373     378       6 
+    7 STATUTE-NUMBER                  X(12)         55    379     390      12 
+    7 FACILITY-NAME                   X(20)         56    391     410      20 
+  5 BUILDING-CLASS-CODE               X(5)          57    411     415       5 
+  5 YEAR-CONSTRUCTED                  X(4)          58    416     419       4 
+  5 ASSESSMENT-CODE                   X             59    420     420       1 
+  5 LAND-VALUE                        9(9)          60    421     429       9 
+  5 IMPROVEMENT-VALUE                 9(9)          61    430     438       9 
+  5 NET-VALUE                         9(9)          62    439     447       9 
+  5 SPECIAL-TAX-CODES                 GROUP         63    448     459      12 
+    7 SPECIAL-TAX-CODE(1) OCCURS 4 TIMES 
+                                      XXX           64    448     450       3 
+    7 SPECIAL-TAX-CODE(2)             XXX           64    451     453       3 
+    7 SPECIAL-TAX-CODE(3)             XXX           64    454     456       3 
+    7 SPECIAL-TAX-CODE(4)             XXX           64    457     459       3 
+  5 EXEMPTIONS                        GROUP         65    460     495      36 
+    7 EXEMPTION-ENTRY(1) OCCURS 4 TIMES 
+                                      GROUP         66    460     468       9 
+      9 EXEMPTION-CODE(1)             X             67    460     460       1 
+      9 EXEMPTION-AMT(1)              9(8)          68    461     468       8 
+    7 EXEMPTION-ENTRY(2)              GROUP         66    469     477       9 
+      9 EXEMPTION-CODE(2)             X             67    469     469       1 
+      9 EXEMPTION-AMT(2)              9(8)          68    470     477       8 
+    7 EXEMPTION-ENTRY(3)              GROUP         66    478     486       9 
+      9 EXEMPTION-CODE(3)             X             67    478     478       1 
+      9 EXEMPTION-AMT(3)              9(8)          68    479     486       8 
+    7 EXEMPTION-ENTRY(4)              GROUP         66    487     495       9 
+      9 EXEMPTION-CODE(4)             X             67    487     487       1 
+      9 EXEMPTION-AMT(4)              9(8)          68    488     495       8 
+  5 DEDUCTIONS                        GROUP         69    496     513      18 
+    7 SENIOR-CITIZENS-CNT             9(4)          70    496     499       4 
+    7 VETERANS-CNT                    9(4)          71    500     503       4 
+    7 WIDOWS-CNT                      9(4)          72    504     507       4 
+    7 SURV-SPOUSE-CNT                 999           73    508     510       3 
+    7 DISABLED-CNT                    999           74    511     513       3 
+  5 USER-FIELD1                       X(4)          75    514     517       4 
+  5 USER-FIELD2                       X(4)          76    518     521       4 
+  5 OLD-PROPERTY-ID                   X(29)         77    522     550      29 
+  5 CENSUS-TRACT                      X(5)          78    551     555       5 
+  5 CENSUS-BLOCK                      X(4)          79    556     559       4 
+  5 PROPERTY-USE-CODE                 XXX           80    560     562       3 
+  5 PROPERTY-FLAGS                    X(10)         81    563     572      10 
+  5 TENANT-REBATE                     GROUP         82    573     595      23 
+    7 REBATE-RESPONSE-FLG             X             83    573     573       1 
+    7 REBATE-BASE-YEAR                X(4)          84    574     577       4 
+    7 REBATE-BASE-YR-TAX              S9(7)V99      85    578     586       9 
+    7 REBATE-BASE-YR-NET-VAL          9(9)          86    587     595       9 
+  5 FILLER                            X(5)          87    596     600       5 
+------- FIELD LEVEL/NAME ---------- --PICTURE--    FLD  START     END  LENGTH 
+  5 TAXES                             GROUP         88    601     682      82 
+    7 LAST-YEAR-TAX                   S9(7)V99      89    601     609       9 
+    7 CURRENT-YEAR-TAX                S9(7)V99      90    610     618       9 
+    7 NON-MUNICIPAL-HALF1             S9(7)V99      91    619     627       9 
+    7 NON-MUNICIPAL-HALF2             S9(7)V99      92    628     636       9 
+    7 MUNICIPAL-HALF1                 S9(7)V99      93    637     645       9 
+    7 MUNICIPAL-HALF2                 S9(7)V99      94    646     654       9 
+    7 NON-MUNICIPAL-HALF3             S9(7)V99      95    655     663       9 
+    7 MUNICIPAL-HALF3                 S9(7)V99      96    664     672       9 
+    7 BILL-STATUS-FLAG                X             97    673     673       1 
+    7 ESTIMATED-QTR3-TAX              S9(7)V99      98    674     682       9 
+  5 PRIOR-YR-NET-VALUE                9(9)          99    683     691       9 
+  5 STATEMENT-OF-STATE-AID-AMT        9(7)V99      100    692     700       9 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+EXPLANATIONS OF DATA FIELDS FOR THE  
+NEW JERSEY PROPERTY TAX SYSTEM 
+MOD IV 
+ 
+ 
+KEY: 
+M = Mandatory Field 
+O = Optional Field 
+* = Rarely Used Field 
+# = Not Maintainable (unable to update) 
+ 
+ 
+1. COUNTY NUMBER: (M)  A two (2) digit numeric code representing the county.  
+
+2. DISTRICT NUMBER: (M) A two (2) digit numeric code representing the district within the county.  
+
+3. BLOCK: (M) 
+
+
+A numerical identification representing a tax map block number as it appears on the tax list. The block is nine characters, up to a five character block number and a four character block suffix. 
+LOT: (M) 
+A numerical identification representing a tax map lot number as it appears on the tax list.  The lot is nine characters, up to a five character lot number and a four character lot suffix. 
+QUALIFICATION CODE: (M) 
+The sub-field for Qualification Codes may be used to make the property identification unique among  
+others with the same block and lot designation.  The qualification code sub-field has eleven spaces.  
+The only codes that may be used are listed below: 
+ 
+. W - Ward - followed by a two-digit number from 01 to 99 indicating the ward in which the property is located. 
+
+. S - Sector - followed by a two-digit number from 01 to 99 indicating the sector in which the property is located.  
+
+. T - Cell Tower - followed by a two-digit number from 01 to 99 indicating the cell tower number within the municipality. 
+
+. B - Billboard - followed by a two-digit number from 01 - 99 indicating the billboard number within the municipality. 
+
+. QFARM - Designates qualified farmland. 
+
+. LOT - Indicates the land, separately assessed from the building. 
+
+. BLDG - Indicates the building, separately assessed from the land.  
+
+. CXXXX - Indicates a condominium unit. (Substitute the unit number for the X's). 
+
+
+ 
+ Note: A unit number may be numeric, alpha or alpha/numeric.  Leading zeros in the unit  number will remain intact on the Master File. 
+ 
+      If unit numbers are repeated in more than one building on the same lot, the number may be    
+      constructed as follows: CAO67 C = the condominium indicator, A = the building indicator and  
+      067 = the unit number.  In order to insure proper sequencing always use C plus all four positions.  
+ 
+• MXXXX - Indicates a mobile home.  (Substitute the unit number for the X's). 
+
+• FP - Indicates that the line item is the portion of a plot or parcel that lies within the Flood Plain.  
+
+• X - Indicates the line item is an exempt portion of a ratable parcel, the taxable portion of which is listed immediately proceeding. 
+
+• HL - Indicates the line item is the portion of a plot or parcel that lies within the Highlands under Ch. 120, P.L. 2004. 
+
+• HM - Indicates the line item is located within the jurisdiction of the Hackensack Meadowlands Development Commission.  
+
+• PL - Indicates the line item is the portion of a plot or parcel that lies within the Pinelands.  
+
+• Z - Indicates that the line item is the portion of a plot or parcel that lies within the Coastal Zone.   
+
+• L - Indicates the line item is the portion of a plot or parcel that lies within the Wetlands.  
+
+
+ 
+      If more than one qualification code is to be used, they are not to be separated by commas or spaces. 
+  
+4. RECORD ID: (#) 
+
+
+This field identifies the record number as a 20, 21, or 22. 
+ 
+5. TRANSACTION DATE: (#) 
+
+
+Indicates the last date a change was made to a particular block and lot. 
+ 
+6. UPDATE NUMBER: (#) 
+
+
+The number of the accepted transaction listing for the last change to a particular block and lot. 
+ 
+7. TAX ACCOUNT NUMBER: (O)  
+
+
+An alpha-numeric field utilized by some districts that have assigned account numbers to all parcels within the district.  These numbers are generally used for sewer and water billing purposes.  These account numbers will be printed in the tax list and tax bill.  
+ 
+ 
+ 
+ 
+ 
+8. PROPERTY CLASS CODE: (M) An alpha-numeric field which identifies real property by use.  
+
+
+CODE  DESCRIPTION  CODE  DESCRIPTION 
+1  Vacant Land   6A  Personal Property Telephone 
+2  Residential   6B  Machinery, Apparatus or Equipment 
+3A  Farm (Regular)    of Petroleum Refineries 
+3B  Farm (Qualified)  15A  Public School Property 
+4A  Commercial   15B  Other School Property 
+4B  Industrial   15C  Public Property 
+4C  Apartment   15D  Church & Charitable Property 
+5A  Class I Railroad Property 15E  Cemeteries & Graveyards 
+5B  Class II Railroad Property 15F  Other Exempt properties not           included in the above classifications 
+9. PROPERTY LOCATION: (M) This is the actual street address of the parcel.  
+
+10. BUILDING DESCRIPTION: (O) Codes describe the physical characteristics of the property.  The information should be listed in the following order: stories, exterior structural material, style, number of stalls and type of garage.  
+
+
+STORIES S   Prefix S with the number of stories. 
+ 
+STRUCTURE: 
+AL Aluminum siding RC Reinforced concrete F Frame  W Wood 
+B Brick   S Stucco   ST Stone 
+CB Concrete Block SS Structured Steel M Metal 
+ 
+STYLE: 
+A Commercial   S Split Level 
+B Industrial   T Twin 
+C Apartments   W Row Home 
+D Dutch Colonial  X Duplex 
+E English Tudor   Z Raised Rancher 
+L Colonial   O Other 
+M Mobile Home   2 Bi-Level 
+R Rancher   3 Tri-Level 
+ 
+GARAGE: 
+AG Attached Garage  UG Unattached Garage  
+(Note: number of cars is a prefixed to code) 
+ 
+11. LAND DESCRIPTION: (O) This alpha-numeric field accepts the size of the parcel in square feet, acres or actual dimensions.  
+
+12. ACREAGE: (#) Lists the size of the parcel in acres.  This field is automatically calculated from the land description field.  
+
+13. ADDITIONAL LOTS 1: (O) This field is provided for the display of any additional lots that are assessed with the primary block and lot.  This field will print on the tax list. 
+
+
+ 
+14. ADDITIONAL LOTS 2: (O) 
+
+
+This field is provided for the display of any additional lots that are assessed with the primary block and lot.  This field will not print on the tax list. 
+ 
+15. ZONING: (O) This alpha-numeric field describes the zoning designations of the parcel.  
+
+16. TAX MAP PAGE NUMBER: (O) Lists the page on which the parcel can be found on the district tax maps. 
+
+
+ 
+17. OWNER’S NAME: (M) Lists the name(s) of the current owners of the parcel.  
+
+18. STREET ADDRESS: (M) This field should list the mailing address of the current owner(s).  
+
+19. CITY & STATE: (M) This field should list the city and state of the current owner(s).  
+
+20. ZIP CODE: (M) This field should list the Zip Code of the current owner(s).  
+
+21. NUMBER OF OWNERS:  (O) 
+
+
+This field represents the number of owners of a property where a property tax deduction exists. 
+ 
+22. DEDUCTION AMOUNT: (O) Lists the total dollar amount of deductions on the parcel.  
+
+23. BANK CODE: (O) A numeric code indicating the name of the lending institution holding a mortgage on the parcel.  
+
+24. MORTGAGE ACCOUNT: (O) 
+
+
+A numeric code indicating the mortgage account number associated with the parcel. 
+ 
+25. DEED BOOK NUMBER: (O) Indicates the book number where the current deed is filed.  
+
+26. DEED PAGE NUMBER: (O) Indicates the page number where the current deed is filed.  
+
+27. SALES PRICE CODE: (O) 
+
+
+This indicates how a sale was investigated for sales ratio purposes.   
+A=Actual, F=Field, Q=Questionaire  
+  
+28. DEED DATE: (O) 
+
+
+This is the date of deed for the sale of a property. 
+ 
+29. SALES PRICE: (O) This field shows the sales price indicated on the deed. The number one (1) indicates a nominal consideration sale. 
+
+
+ 
+30. SALE ASSESSMENT: (O) 
+
+
+This field is for the assessment of the property at the time of the sale. 
+ 
+31.  SOCIAL SECURITY NUMBER: (O) 
+
+
+This field is no longer used. 
+ 
+32. CO-CLAIMANT SOCIAL SECURITY NUMBER: (O) 
+
+
+This field is no longer used. 
+ 
+33. NUMBER OF DWELLINGS: (O, *) 
+
+
+This field indicates the number of residential dwelling units within the property. 
+ 
+34. NUMBER OF COMMERCIAL UNITS: (O, *) 
+
+
+This field indicates the number of commercial units within the property. 
+ 
+35. MULTIPLE OCCUPANCY CODE: (#) 
+
+
+This field is not maintained. 
+ 
+36. PERCENT OWNED: (*) 
+
+
+1=10%, 2=20%, 3=30%, blank=100%. 
+ 
+37. REBATE CODE: (#) Field not maintained.  
+
+38. DELINQUENCY CODE: (#) 
+
+
+Field not maintained. 
+ 
+39. EXEMPT PROPERTY LIST CODE: (M) A numeric code identifying owner, purpose and specific use.  This field is only mandatory for exempt property.  
+
+40. INITIAL FILING DATE (MMDDYY): (O) The date of the initial filing of the application for exemption from local property taxation is filed with the district assessor.  
+
+41. FURTHER FILING DATE (MMDDYY): (O) The date in which the application for continuance of exemption from local property taxation is completed and returned to the district assessor. 
+
+
+ 
+42. EXEMPT STATUTE NUMBER: (O) The statute number under which the subject property claims exemption from local property taxes.  
+
+43. EXEMPT FACILITY NAME: (O) Description of facility type.  
+
+44. BUILDING CLASS CODE: (O) 
+
+
+The building class from the appraisal manual for New Jersey assessors describing the quality of a property. 
+ 
+45. CONSTRUCTION YEAR: (O) 
+
+
+This field indicates the year the building was constructed. 
+ 
+46. ASSESSMENT CODE: (O) A letter “P” would be entered in this field to indicate that the improvement was not complete prior to October 1st of the pre-tax year.  The assessment entered represents only a partial value of the total value of the improvement when completed.  
+
+47. LAND VALUE: (M) The assessed value of the site.  
+
+48. IMPROVEMENT VALUE: (M) The assessed value of the all improvements to the site.  
+
+49. NET TAXABLE VALUE: (M) The value of the land plus the improvement value minus limited exemptions.  
+
+50. SPECIAL TAX CODES: (O) A single line item may have up to four (4) special taxing district codes. 
+
+
+ 
+SPECIAL TAX CODE #1  F-Fire   
+SPECIAL TAX CODE #2  G-Garbage 
+SPECIAL TAX CODE #3  L-Light 
+SPECIAL TAX CODE #4  S-Special Improvement District      W-Water 
+ 
+ 
+ 
+51. LIMITED EXEMPTION/ABATEMENTS CODES & AMOUNTS: (O) 
+A single line item may contain up to four (4) limited exemptions/abatements.        
+ 
+EXEMPTION CODE #1 
+EXEMPTION AMOUNT #1 
+EXEMPTION CODE #2 
+EXEMPTION AMOUNT #2 
+EXEMPTION CODE #3 
+EXEMPTION AMOUNT #3 
+EXEMPTION CODE #4 
+EXEMPTION AMOUNT #4 
+ 
+ANY COMBINATION OF THESE CODES MAY APPEAR IN THE ABOVE FIELDS: 
+ 
+CODE   DESCRIPTION 
+E   Fire Suppression 
+F   Fallout Shelter 
+P   Pollution Control 
+W   Water Supple Control 
+Y   Renewable Energy 
+ 
+B   Commercial/Industrial 
+H   Household Improvement 
+M   Multifamily Dwelling Improvement 
+ 
+G   Commercial/Industrial Exemption 
+I   Dwell Exemption 
+J   Dwell Abatement 
+K   New Dwell Conv. Exemption 
+L   New Dwell Conv. Abatement 
+N   Mult. Dwell Exemption 
+O   Mult. Dwell Abatement 
+U   UEZ Abatement (Urban Enterprise Zone) 
+ 
+     52. DEDUCTIONS: (O) 
+     CODE    AMOUNT 
+SENIOR CITIZENS   S    $250 
+VETERANS    V    $250 
+WIDOWS    W    $250 
+SURVIVING SPOUSE  R    $250 
+DISABLED PERSONS  D    $250 
+ 
+53. USER FIELD 1: (*) 
+
+
+This field contains various types of data. 
+ 
+54. USER FIELD 2: (*) 
+
+
+This field contains various types of data. 
+ 
+55. OLD PROPERTY ID: (#) 
+This field is populated with old block and lot designations upon the execution of a property identification change. 
+ 
+56. CENSUS TRACT: (*) 
+
+
+ 
+57. CENSUS BLOCK: (*) 
+ 
+58. PROPERTY USE CODE (O): 
+
+
+This field is for a three character code used to designate a specific description of commercial or class 4 properties.  The only codes that may be used are listed below:  
+   
+CODE 
+ USE 
+  
+ CODE 
+ USE 
+ 
+010 
+ AIRPORT* 
+  
+ 222 
+ GREENHOUSE / NURSERY  
+ 
+020 
+ APT - GARDEN 
+  
+ 230 
+ HISTORICAL SITE* 
+ 
+021 
+ APT - HIGH RISE 
+  
+ 270 
+ HOSP - CONVALESCENT 
+ 
+029 
+ APT - OTHER 
+  
+ 271 
+ HOSP - GENERAL 
+ 
+030 
+ AUTO SHOW ROOM  
+  
+ 272 
+ HOSP - VETERINARY 
+ 
+031 
+ AUTO SALES LOT 
+  
+ 273 
+ HOSP - ASSISTED LIVING  
+ 
+040 
+ ASPHALT/CEMENT PLANT* 
+  
+ 278 
+ HOSP - NURSING HOME  
+ 
+050 
+ BANK - MAIN OFFICE 
+  
+ 279 
+ HOSP - OTHER 
+ 
+051 
+ BANK - BRANCH 
+  
+ 280 
+ HOTEL 
+ 
+059 
+ BANK - OTHER 
+  
+ 281 
+ HOTEL - CONFERENCE CENTER  
+ 
+060 
+ BILLBOARD - WOOD  
+  
+ 282 
+ ROOMING HOUSE  
+ 
+061 
+ BILLBOARD - OTHER  
+  
+ 283 
+ BED AND BREAKFAST* 
+ 
+070 
+ BOWLING ALLEY 
+  
+ 330 
+ INDUSTRIAL / MANUFACTURING  
+ 
+073 
+ CAMPGROUND  
+  
+ 331 
+ INDUSTRIAL - OTHER  
+ 
+074 
+ CEMETERY  
+  
+ 335 
+ CORRECTIONAL FACILITY / PRISON  
+ 
+075 
+ COLLEGE  
+  
+ 430 
+ KENNEL 
+ 
+080 
+ CASINO* 
+  
+ 440 
+ LUMBER YARD  
+ 
+100 
+ COMMERCIAL - OTHER  
+  
+ 441 
+ LAUNDRY / CLEANERS 
+ 
+101 
+ COMMERCIAL - MIXED USE* 
+  
+ 442 
+ LIBRARY 
+ 
+110 
+ CAR WASH 
+  
+ 510 
+ MARINA  
+ 
+120 
+ DAIRY FARM 
+  
+ 511 
+ MARINA - DOCK/SLIP 
+ 
+130 
+ CHURCH - RESIDENCE 
+  
+ 512 
+ MOBILE HOME PARK  
+ 
+180 
+ FLEA MARKET - AUCTION* 
+  
+ 530 
+ MOTEL 
+ 
+190 
+ FUNERAL HOME 
+  
+ 540 
+ MUSEUM* 
+ 
+191 
+ FIRE / RESCUE STATION  
+  
+ 560 
+ OFFICE - GENERAL 
+ 
+210 
+ GARAGE - SERVICE / GAS 
+  
+ 561 
+ OFFICE - CORP. HEADQUARTERS 
+ 
+211 
+ GARAGE - PARKING 
+  
+ 562 
+ OFFICE - MEDICAL / MENTAL HEALTH* 
+ 
+212 
+ PARKING LOT  
+  
+ 563 
+ OFFICE - ENGINEERING / RESEARCH 
+ 
+218 
+ GAS / STORAGE TANK  
+  
+ 564 
+ OFFICE - GOVERNMENT 
+ 
+219 
+ GARAGE - OTHER 
+  
+ 565 
+ OFFICE - W/ RESIDENTIAL 
+ 
+220 
+ GARAGE - STORAGE  
+  
+ 566 
+ OFFICE - CONDO* 
+ 
+221 
+ GOV'T BUILDING  
+  
+ 569 
+ OFFICE - OTHER 
+ 
+569 
+ OFFICE - OTHER 
+  
+ 730 
+ STORE - CONVENIENCE 
+ 
+570 
+ POST OFFICE 
+  
+ 731 
+ STORE - DEPARTMENT 
+ 
+571 
+ FOOD & BEVERAGE PROCESSING 
+  
+ 732 
+ STORE - MALL 
+ 
+580 
+ QUARRY - STONE / SAND* 
+  
+ 733 
+ STORE - SHOPPING CENTER 
+ 
+610 
+ REC - CLUB HOUSE 
+  
+ 734 
+ STORE - SUPERMARKET 
+ 
+611 
+ REC - COMMUNITY CENTER 
+  
+ 737 
+ STORE - RETAIL 
+ 
+612 
+ REC - COUNTRY CLUB 
+  
+ 738 
+ STORE - W/ RESIDENTIAL 
+ 
+613 
+ REC - GYMNASIUM 
+  
+ 739 
+ STORE - OTHER 
+ 
+614 
+ REC - HEALTH CLUB 
+  
+ 740 
+ STORE - FARM MARKET* 
+ 
+615 
+ REC - RINK / ICE 
+  
+ 750 
+ TRAIN / BUS DEPOT* 
+ 
+616 
+ REC - RACQUET CLUB 
+  
+ 760 
+ TELEPHONE BUILDING  
+ 
+617 
+ REC - ROLLER RINK 
+  
+ 761 
+ PUBLIC UTILITY BUILDING  
+ 
+618 
+ REC - INDOOR 
+  
+ 770 
+ THEATER - DRIVE-IN 
+ 
+619 
+ REC - ARCADE* 
+  
+ 771 
+ THEATER - MOVIE 
+ 
+620 
+ REC - AMUSEMENT PARK* 
+  
+ 772 
+ THEATER - PLAYHOUSE 
+ 
+621 
+ REC - GOLF COURSE* 
+  
+ 670 
+ SWIM CLUB 
+ 
+622 
+ REC - MINI GOLF* 
+  
+ 779 
+ THEATER - OTHER 
+ 
+623 
+ REC - RACETRACK - AUTO/HORSE* 
+  
+ 780 
+ TOWER - RADIO 
+ 
+624 
+ REC - ARENA* 
+  
+ 781 
+ TOWER - TV 
+ 
+629 
+ REC - OTHER 
+  
+ 782 
+ TOWER - OTHER 
+ 
+635 
+ RESIDENTIAL CO-OP 
+  
+ 783 
+ TOWER - CELLULAR 
+ 
+639 
+ REST - TAVERN / NIGHT CLUB 
+  
+ 790 
+ TRUCK TERMINAL 
+ 
+640 
+ REST - DINER 
+  
+ 791 
+ TRUCK STOP* 
+ 
+641 
+ REST - FAST FOOD 
+  
+ 940 
+ WINERY / BREWERY* 
+ 
+642 
+ REST - BANQUET HALL 
+  
+ 950 
+ WAREHOUSE - FREEZER 
+ 
+643 
+ REST - W/ APARTMENT* 
+  
+ 951 
+ WAREHOUSE - GENERAL STORAGE 
+ 
+649 
+ REST - OTHER 
+  
+ 952 
+ WAREHOUSE - MINI SELF-STORAGE 
+ 
+650 
+ RECYCLING FACILITY* 
+  
+ 959 
+ WAREHOUSE - OTHER 
+ 
+660 
+ SCHOOL 
+  
+ 960 
+ WAREHOUSE - ARCHIVES 
+ 
+661 
+ DAYCARE CENTER* 
+  
+ 970 
+ REFINERY 
+ 
+ 
+  
+  
+  
+  
+ 
+* Represent New Codes 
+  
+  
+  
+ 
+
+ 
+59. TENANT REBATE RESPONSE FLAG: (O) 
+
+
+N=No tenant rebate required, Y=tenant rebate notice is required 
+ 
+60. TENANT REBATE BASE YEAR: (O) 
+
+
+This field indicates the base year for tenant rebate purposes. 
+ 
+61. TENANT REBATE TAXES: (O) 
+
+
+This field indicates the taxes that were paid in the tenant rebate base year. 
+ 
+62. TENANT REBATE BASE YEAR NET VALUE: (#) 
+
+
+This field indicates the net assessment of the property in the tenant rebate base year. 
+ 
+63. LAST YEAR TAX: (O) 
+
+
+This field indicates the prior year net amount of tax.  The decimal point is assumed. 
+(This field is for towns that bill on a calendar year only. 
+64. CURRENT YEAR TAX: (O) 
+
+
+This field indicates the current year net amount of tax.  The decimal point is assumed. 
+(This field is for towns that bill on a calendar year only.) 
+ 
+65. NON-MUNICIPAL HALF 1 TAXES: (O) 
+
+
+This field indicates the net amount of non-municipal taxes for the first half of the current tax year. 
+ 
+66. NON-MUNICIPAL HALF 2 TAXES: (O) 
+
+
+This field indicates the net amount of non-municipal taxes for the second half of the current tax year. 
+ 
+67. MUNICIPAL HALF 1 TAXES: (O) 
+
+
+This field indicates the net amount of municipal taxes for the first half of the current tax year. 
+ 
+68. MUNICIPAL HALF 2 TAXES: (O) 
+
+
+This field indicates the net amount of municipal taxes for the second half of the current tax year. 
+ 
+69. NON-MUNICIPAL HALF 3 TAXES: (*) 
+
+
+This field is rarely used. 
+ 
+70. BILLLING STATUS FLAG: (*) 
+
+
+This field is rarely used. 
+ 
+71. ESTIMATED QUARTER 3 TAXES: (O) 
+
+
+This field indicates the third quarter bill is based on a percentage of last year’s taxes before the tax rates have been determined. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ MUNICIPALITY 
+ COUNTY 
+ 
+0101 
+ ABSECON CITY 
+ Atlantic County 
+ 
+0102 
+ ATLANTIC CITY CITY 
+ Atlantic County 
+ 
+0103 
+ BRIGANTINE CITY 
+ Atlantic County 
+ 
+0104 
+ BUENA BORO 
+ Atlantic County 
+ 
+0105 
+ BUENA VISTA TWP 
+ Atlantic County 
+ 
+0106 
+ CORBIN CITY CITY 
+ Atlantic County 
+ 
+0107 
+ EGG HARBOR CITY 
+ Atlantic County 
+ 
+0108 
+ EGG HARBOR TWP 
+ Atlantic County 
+ 
+0109 
+ ESTELL MANOR CITY 
+ Atlantic County 
+ 
+0110 
+ FOLSOM BORO 
+ Atlantic County 
+ 
+0111 
+ GALLOWAY TWP 
+ Atlantic County 
+ 
+0112 
+ HAMILTON TWP 
+ Atlantic County 
+ 
+0113 
+ HAMMONTON TOWN 
+ Atlantic County 
+ 
+0114 
+ LINWOOD CITY 
+ Atlantic County 
+ 
+0115 
+ LONGPORT BORO 
+ Atlantic County 
+ 
+0116 
+ MARGATE CITY CITY 
+ Atlantic County 
+ 
+0117 
+ MULLICA TWP 
+ Atlantic County 
+ 
+0118 
+ NORTHFIELD CITY 
+ Atlantic County 
+ 
+0119 
+ PLEASANTVILLE CITY 
+ Atlantic County 
+ 
+0120 
+ PORT REPUBLIC CITY 
+ Atlantic County 
+ 
+0121 
+ SOMERS POINT CITY 
+ Atlantic County 
+ 
+0122 
+ VENTNOR CITY 
+ Atlantic County 
+ 
+0123 
+ WEYMOUTH TWP 
+ Atlantic County 
+ 
+0201 
+ ALLENDALE BORO 
+ Bergen County 
+ 
+0202 
+ ALPINE BORO 
+ Bergen County 
+ 
+0203 
+ BERGENFIELD BORO 
+ Bergen County 
+ 
+0204 
+ BOGOTA BORO 
+ Bergen County 
+ 
+0205 
+ CARLSTADT BORO 
+ Bergen County 
+ 
+0206 
+ CLIFFSIDE PARK BORO 
+ Bergen County 
+ 
+0207 
+ CLOSTER BORO 
+ Bergen County 
+ 
+0208 
+ CRESSKILL BORO 
+ Bergen County 
+ 
+0209 
+ DEMAREST BORO 
+ Bergen County 
+ 
+0210 
+ DUMONT BORO 
+ Bergen County 
+ 
+0211 
+ ELMWOOD PARK BORO 
+ Bergen County 
+ 
+0212 
+ E RUTHERFORD BORO 
+ Bergen County 
+ 
+0213 
+ EDGEWATER BORO 
+ Bergen County 
+ 
+0214 
+ EMERSON BORO 
+ Bergen County 
+ 
+0215 
+ ENGLEWOOD CITY 
+ Bergen County 
+ 
+0216 
+ ENGLEWOOD CLIFFS BORO 
+ Bergen County 
+ 
+0217 
+ FAIRLAWN BORO 
+ Bergen County 
+ 
+0218 
+ FAIRVIEW BORO 
+ Bergen County 
+ 
+0219 
+ FORT LEE BORO 
+ Bergen County 
+ 
+0220 
+ FRANKLIN LAKES BORO 
+ Bergen County 
+ 
+0221 
+ GARFIELD CITY 
+ Bergen County 
+ 
+0222 
+ GLEN ROCK BORO 
+ Bergen County 
+ 
+0223 
+ HACKENSACK CITY 
+ Bergen County 
+ 
+0224 
+ HARRINGTON PARK BORO 
+ Bergen County 
+ 
+0225 
+ HASBROUCK HGHTS BORO 
+ Bergen County 
+ 
+0226 
+ HAWORTH BORO 
+ Bergen County 
+ 
+0227 
+ HILLSDALE BORO 
+ Bergen County 
+ 
+0228 
+ HOHOKUS BORO 
+ Bergen County 
+ 
+0229 
+ LEONIA BORO 
+ Bergen County 
+ 
+0230 
+ LITTLE FERRY BORO 
+ Bergen County 
+ 
+0231 
+ LODI BORO 
+ Bergen County 
+ 
+0232 
+ LYNDHURST TWP 
+ Bergen County 
+ 
+0233 
+ MAHWAH TWP 
+ Bergen County 
+ 
+0234 
+ MAYWOOD BORO 
+ Bergen County 
+ 
+0235 
+ MIDLAND PARK BORO 
+ Bergen County 
+ 
+0236 
+ MONTVALE BORO 
+ Bergen County 
+ 
+0237 
+ MOONACHIE BORO 
+ Bergen County 
+ 
+0238 
+ NEW MILFORD BORO 
+ Bergen County 
+ 
+0239 
+ NORTH ARLINGTON BORO 
+ Bergen County 
+ 
+0240 
+ NORTHVALE BORO 
+ Bergen County 
+ 
+0241 
+ NORWOOD BORO 
+ Bergen County 
+ 
+0242 
+ OAKLAND BORO 
+ Bergen County 
+ 
+0243 
+ OLD TAPPAN BORO 
+ Bergen County 
+ 
+0244 
+ ORADELL BORO 
+ Bergen County 
+ 
+0245 
+ PALISADES PARK BORO 
+ Bergen County 
+ 
+0246 
+ PARAMUS BORO 
+ Bergen County 
+ 
+0247 
+ PARK RIDGE BORO 
+ Bergen County 
+ 
+0248 
+ RAMSEY BORO 
+ Bergen County 
+ 
+0249 
+ RIDGEFIELD BORO 
+ Bergen County 
+ 
+0250 
+ RIDGEFIELD PARK VILLAGE 
+ Bergen County 
+ 
+0251 
+ RIDGEWOOD VILLAGE 
+ Bergen County 
+ 
+0252 
+ RIVEREDGE BORO 
+ Bergen County 
+ 
+0253 
+ RIVERVALE TWP 
+ Bergen County 
+ 
+0254 
+ ROCHELLE PARK TWP 
+ Bergen County 
+ 
+0255 
+ ROCKLEIGH BORO 
+ Bergen County 
+ 
+0256 
+ RUTHERFORD BORO 
+ Bergen County 
+ 
+0257 
+ SADDLE BROOK TWP 
+ Bergen County 
+ 
+0258 
+ SADDLE RIVER BORO 
+ Bergen County 
+ 
+0259 
+ SO HACKENSACK TWP 
+ Bergen County 
+ 
+0260 
+ TEANECK TWP 
+ Bergen County 
+ 
+0261 
+ TENAFLY BORO 
+ Bergen County 
+ 
+0262 
+ TETERBORO BORO 
+ Bergen County 
+ 
+0263 
+ UPPER SADDLE RIV BORO 
+ Bergen County 
+ 
+0264 
+ WALDWICK BORO 
+ Bergen County 
+ 
+0265 
+ WALLINGTON BORO 
+ Bergen County 
+ 
+0266 
+ WASHINGTON TWP 
+ Bergen County 
+ 
+0267 
+ WESTWOOD BORO 
+ Bergen County 
+ 
+0268 
+ WOODCLIFF LAKE BORO 
+ Bergen County 
+ 
+0269 
+ WOOD RIDGE BORO 
+ Bergen County 
+ 
+0270 
+ WYCKOFF TWP 
+ Bergen County 
+ 
+0301 
+ BASS RIVER TWP 
+ Burlington County 
+ 
+0302 
+ BEVERLY CITY 
+ Burlington County 
+ 
+0303 
+ BORDENTOWN CITY 
+ Burlington County 
+ 
+0304 
+ BORDENTOWN TWP 
+ Burlington County 
+ 
+0305 
+ BURLINGTON CITY 
+ Burlington County 
+ 
+0306 
+ BURLINGTON TWP 
+ Burlington County 
+ 
+0307 
+ CHESTERFIELD TWP 
+ Burlington County 
+ 
+0308 
+ CINNAMINSON TWP 
+ Burlington County 
+ 
+0309 
+ DELANCO TWP 
+ Burlington County 
+ 
+0310 
+ DELRAN TWP 
+ Burlington County 
+ 
+0311 
+ EASTAMPTON TWP 
+ Burlington County 
+ 
+0312 
+ EDGEWATER PARK TWP 
+ Burlington County 
+ 
+0313 
+ EVESHAM TWP 
+ Burlington County 
+ 
+0314 
+ FIELDSBORO BORO 
+ Burlington County 
+ 
+0315 
+ FLORENCE TWP 
+ Burlington County 
+ 
+0316 
+ HAINESPORT TWP 
+ Burlington County 
+ 
+0317 
+ LUMBERTON TWP 
+ Burlington County 
+ 
+0318 
+ MANSFIELD TWP 
+ Burlington County 
+ 
+0319 
+ MAPLE SHADE TWP 
+ Burlington County 
+ 
+0320 
+ MEDFORD TWP 
+ Burlington County 
+ 
+0321 
+ MEDFORD LAKES BORO 
+ Burlington County 
+ 
+0322 
+ MOORESTOWN TWP 
+ Burlington County 
+ 
+0323 
+ MT HOLLY TWP 
+ Burlington County 
+ 
+0324 
+ MT LAUREL TWP 
+ Burlington County 
+ 
+0325 
+ NEW HANOVER TWP 
+ Burlington County 
+ 
+0326 
+ NO HANOVER TWP 
+ Burlington County 
+ 
+0327 
+ PALMYRA BORO 
+ Burlington County 
+ 
+0328 
+ PEMBERTON BORO 
+ Burlington County 
+ 
+0329 
+ PEMBERTON TWP 
+ Burlington County 
+ 
+0330 
+ RIVERSIDE TWP 
+ Burlington County 
+ 
+0331 
+ RIVERTON BORO 
+ Burlington County 
+ 
+0332 
+ SHAMONG TWP 
+ Burlington County 
+ 
+0333 
+ SOUTHAMPTON TWP 
+ Burlington County 
+ 
+0334 
+ SPRINGFIELD TWP 
+ Burlington County 
+ 
+0335 
+ TABERNACLE TWP 
+ Burlington County 
+ 
+0336 
+ WASHINGTON TWP 
+ Burlington County 
+ 
+0337 
+ WESTAMPTON TWP 
+ Burlington County 
+ 
+0338 
+ WILLINGBORO TWP 
+ Burlington County 
+ 
+0339 
+ WOODLAND TWP 
+ Burlington County 
+ 
+0340 
+ WRIGHTSTOWN BORO 
+ Burlington County 
+ 
+0401 
+ AUDUBON BORO 
+ Camden County 
+ 
+0402 
+ AUDUBON PARK BORO 
+ Camden County 
+ 
+0403 
+ BARRINGTON BORO 
+ Camden County 
+ 
+0404 
+ BELLMAWR BORO 
+ Camden County 
+ 
+0405 
+ BERLIN BORO 
+ Camden County 
+ 
+0406 
+ BERLIN TWP 
+ Camden County 
+ 
+0407 
+ BROOKLAWN BORO 
+ Camden County 
+ 
+0408 
+ CAMDEN CITY 
+ Camden County 
+ 
+0409 
+ CHERRY HILL TWNSHP 
+ Camden County 
+ 
+0410 
+ CHESILHURST BORO 
+ Camden County 
+ 
+0411 
+ CLEMENTON BORO 
+ Camden County 
+ 
+0412 
+ COLLINGSWOOD BORO 
+ Camden County 
+ 
+0413 
+ GIBBSBORO BORO 
+ Camden County 
+ 
+0414 
+ GLOUCESTER CITY 
+ Camden County 
+ 
+0415 
+ GLOUCESTER TWP 
+ Camden County 
+ 
+0416 
+ HADDON TWP 
+ Camden County 
+ 
+0417 
+ HADDONFIELD BORO 
+ Camden County 
+ 
+0418 
+ HADDON HEIGHTS BORO 
+ Camden County 
+ 
+0419 
+ HI NELLA BORO 
+ Camden County 
+ 
+0420 
+ LAUREL SPRINGS BORO 
+ Camden County 
+ 
+0421 
+ LAWNSIDE BORO 
+ Camden County 
+ 
+0422 
+ LINDENWOLD BORO 
+ Camden County 
+ 
+0423 
+ MAGNOLIA BORO 
+ Camden County 
+ 
+0424 
+ MERCHANTVILLE BORO 
+ Camden County 
+ 
+0425 
+ MOUNT EPHRAIM BORO 
+ Camden County 
+ 
+0426 
+ OAKLYN BORO 
+ Camden County 
+ 
+0427 
+ PENNSAUKEN TWP 
+ Camden County 
+ 
+0428 
+ PINE HILL BORO 
+ Camden County 
+ 
+0429 
+ PINE VALLEY BORO 
+ Camden County 
+ 
+0430 
+ RUNNEMEDE BORO 
+ Camden County 
+ 
+0431 
+ SOMERDALE BORO 
+ Camden County 
+ 
+0432 
+ STRATFORD BORO 
+ Camden County 
+ 
+0433 
+ TAVISTOCK BORO 
+ Camden County 
+ 
+0434 
+ VOORHEES TWP 
+ Camden County 
+ 
+0435 
+ WATERFORD TWP 
+ Camden County 
+ 
+0436 
+ WINSLOW TWP 
+ Camden County 
+ 
+0437 
+ WOODLYNNE BORO 
+ Camden County 
+ 
+0501 
+ AVALON BORO 
+ Cape May County 
+ 
+0502 
+ CAPE MAY CITY 
+ Cape May County 
+ 
+0503 
+ CAPE MAY POINT BORO 
+ Cape May County 
+ 
+0504 
+ DENNIS TWP 
+ Cape May County 
+ 
+0505 
+ LOWER TWP 
+ Cape May County 
+ 
+0506 
+ MIDDLE TWP 
+ Cape May County 
+ 
+0507 
+ NORTH WILDWOOD CITY 
+ Cape May County 
+ 
+0508 
+ OCEAN CITY CITY 
+ Cape May County 
+ 
+0509 
+ SEA ISLE CITY CITY 
+ Cape May County 
+ 
+0510 
+ STONE HARBOR BORO 
+ Cape May County 
+ 
+0511 
+ UPPER TWP 
+ Cape May County 
+ 
+0512 
+ WEST CAPE MAY BORO 
+ Cape May County 
+ 
+0513 
+ WEST WILDWOOD BORO 
+ Cape May County 
+ 
+0514 
+ WILDWOOD CITY 
+ Cape May County 
+ 
+0515 
+ WILDWOOD CREST BORO 
+ Cape May County 
+ 
+0516 
+ WOODBINE BORO 
+ Cape May County 
+ 
+0601 
+ BRIDGETON CITY 
+ Cumberland County 
+ 
+0602 
+ COMMERCIAL TWP 
+ Cumberland County 
+ 
+0603 
+ DEERFIELD TWP 
+ Cumberland County 
+ 
+0604 
+ DOWNE TWP 
+ Cumberland County 
+ 
+0605 
+ FAIRFIELD TWP 
+ Cumberland County 
+ 
+0606 
+ GREENWICH TWP 
+ Cumberland County 
+ 
+0607 
+ HOPEWELL TWP 
+ Cumberland County 
+ 
+0608 
+ LAWRENCE TWP 
+ Cumberland County 
+ 
+0609 
+ MAURICE RIVER TWP 
+ Cumberland County 
+ 
+0610 
+ MILLVILLE CITY 
+ Cumberland County 
+ 
+0611 
+ SHILOH BORO 
+ Cumberland County 
+ 
+0612 
+ STOW CREEK TWP 
+ Cumberland County 
+ 
+0613 
+ UPPER DEERFIELD TWP 
+ Cumberland County 
+ 
+0614 
+ VINELAND CITY 
+ Cumberland County 
+ 
+0701 
+ BELLEVILLE TWP 
+ Essex County 
+ 
+0702 
+ BLOOMFIELD TWP 
+ Essex County 
+ 
+0703 
+ CALDWELL BORO TWP 
+ Essex County 
+ 
+0704 
+ CEDAR GROVE TWP 
+ Essex County 
+ 
+0705 
+ EAST ORANGE CITY 
+ Essex County 
+ 
+0706 
+ ESSEX FELLS TWP 
+ Essex County 
+ 
+0707 
+ FAIRFIELD TWP 
+ Essex County 
+ 
+0708 
+ GLEN RIDGE BORO 
+ Essex County 
+ 
+0709 
+ IRVINGTON TWP 
+ Essex County 
+ 
+0710 
+ LIVINGSTON TWP 
+ Essex County 
+ 
+0711 
+ MAPLEWOOD TWP 
+ Essex County 
+ 
+0712 
+ MILLBURN TWP 
+ Essex County 
+ 
+0713 
+ MONTCLAIR TWP 
+ Essex County 
+ 
+0714 
+ NEWARK CITY 
+ Essex County 
+ 
+0715 
+ NORTH CALDWELL TWP 
+ Essex County 
+ 
+0716 
+ NUTLEY TWP 
+ Essex County 
+ 
+0717 
+ ORANGE CITY TWP 
+ Essex County 
+ 
+0718 
+ ROSELAND BORO 
+ Essex County 
+ 
+0719 
+ SOUTH ORANGE VILLAGE TW 
+ Essex County 
+ 
+0720 
+ VERONA TWP 
+ Essex County 
+ 
+0721 
+ WEST CALDWELL TWP 
+ Essex County 
+ 
+0722 
+ WEST ORANGE TWP 
+ Essex County 
+ 
+0801 
+ CLAYTON BORO 
+ Gloucester County 
+ 
+0802 
+ DEPTFORD TWP 
+ Gloucester County 
+ 
+0803 
+ EAST GREENWICH TWP 
+ Gloucester County 
+ 
+0804 
+ ELK TWP 
+ Gloucester County 
+ 
+0805 
+ FRANKLIN TWP 
+ Gloucester County 
+ 
+0806 
+ GLASSBORO BORO 
+ Gloucester County 
+ 
+0807 
+ GREENWICH TWP 
+ Gloucester County 
+ 
+0808 
+ HARRISON TWP 
+ Gloucester County 
+ 
+0809 
+ LOGAN TWP 
+ Gloucester County 
+ 
+0810 
+ MANTUA TWP 
+ Gloucester County 
+ 
+0811 
+ MONROE TWP 
+ Gloucester County 
+ 
+0812 
+ NATIONAL PARK BORO 
+ Gloucester County 
+ 
+0813 
+ NEWFIELD BORO 
+ Gloucester County 
+ 
+0814 
+ PAULSBORO BORO 
+ Gloucester County 
+ 
+0815 
+ PITMAN BORO 
+ Gloucester County 
+ 
+0816 
+ SO HARRISON TWP 
+ Gloucester County 
+ 
+0817 
+ SWEDESBORO BORO 
+ Gloucester County 
+ 
+0818 
+ WASHINGTON TWP 
+ Gloucester County 
+ 
+0819 
+ WENONAH BORO 
+ Gloucester County 
+ 
+0820 
+ WEST DEPTFORD TWP 
+ Gloucester County 
+ 
+0821 
+ WESTVILLE BORO 
+ Gloucester County 
+ 
+0822 
+ WOODBURY CITY 
+ Gloucester County 
+ 
+0823 
+ WOODBURY HEIGHTS BORO 
+ Gloucester County 
+ 
+0824 
+ WOOLWICH TWP 
+ Gloucester County 
+ 
+0901 
+ BAYONNE CITY 
+ Hudson County 
+ 
+0902 
+ EAST NEWARK BORO 
+ Hudson County 
+ 
+0903 
+ GUTTENBERG TOWN 
+ Hudson County 
+ 
+0904 
+ HARRISON TOWN 
+ Hudson County 
+ 
+0905 
+ HOBOKEN CITY 
+ Hudson County 
+ 
+0906 
+ JERSEY CITY CITY 
+ Hudson County 
+ 
+0907 
+ KEARNY TOWN 
+ Hudson County 
+ 
+0908 
+ NORTH BERGEN TWP 
+ Hudson County 
+ 
+0909 
+ SECAUCUS TOWN 
+ Hudson County 
+ 
+0910 
+ UNION CITY CITY 
+ Hudson County 
+ 
+0911 
+ WEEHAWKEN TWP 
+ Hudson County 
+ 
+0912 
+ WEST NEW YORK TOWN 
+ Hudson County 
+ 
+1001 
+ ALEXANDRIA TWP 
+ Hunterdon County 
+ 
+1002 
+ BETHLEHEM TWP 
+ Hunterdon County 
+ 
+1003 
+ BLOOMSBURY BORO 
+ Hunterdon County 
+ 
+1004 
+ CALIFON BORO 
+ Hunterdon County 
+ 
+1005 
+ CLINTON TOWN 
+ Hunterdon County 
+ 
+1006 
+ CLINTON TWP 
+ Hunterdon County 
+ 
+1007 
+ DELAWARE TWP 
+ Hunterdon County 
+ 
+1008 
+ EAST AMWELL TWP 
+ Hunterdon County 
+ 
+1009 
+ FLEMINGTON BORO 
+ Hunterdon County 
+ 
+1010 
+ FRANKLIN TWP 
+ Hunterdon County 
+ 
+1011 
+ FRENCHTOWN BORO 
+ Hunterdon County 
+ 
+1012 
+ GLEN GARDNER BORO 
+ Hunterdon County 
+ 
+1013 
+ HAMPTON BORO 
+ Hunterdon County 
+ 
+1014 
+ HIGH BRIDGE BORO 
+ Hunterdon County 
+ 
+1015 
+ HOLLAND TWP 
+ Hunterdon County 
+ 
+1016 
+ KINGWOOD TWP 
+ Hunterdon County 
+ 
+1017 
+ LAMBERTVILLE CITY 
+ Hunterdon County 
+ 
+1018 
+ LEBANON BORO 
+ Hunterdon County 
+ 
+1019 
+ LEBANON TWP 
+ Hunterdon County 
+ 
+1020 
+ MILFORD BORO 
+ Hunterdon County 
+ 
+1021 
+ RARITAN TWP 
+ Hunterdon County 
+ 
+1022 
+ READINGTON TWP 
+ Hunterdon County 
+ 
+1023 
+ STOCKTON BORO 
+ Hunterdon County 
+ 
+1024 
+ TEWKSBURY TWP 
+ Hunterdon County 
+ 
+1025 
+ UNION TWP 
+ Hunterdon County 
+ 
+1026 
+ WEST AMWELL TWP 
+ Hunterdon County 
+ 
+1101 
+ EAST WINDSOR TWP 
+ Mercer County 
+ 
+1102 
+ EWING TWP 
+ Mercer County 
+ 
+1103 
+ HAMILTON TWP 
+ Mercer County 
+ 
+1104 
+ HIGHTSTOWN BORO 
+ Mercer County 
+ 
+1105 
+ HOPEWELL BORO 
+ Mercer County 
+ 
+1106 
+ HOPEWELL TWP 
+ Mercer County 
+ 
+1107 
+ LAWRENCE TWP 
+ Mercer County 
+ 
+1108 
+ PENNINGTON BORO 
+ Mercer County 
+ 
+1111 
+ TRENTON CITY 
+ Mercer County 
+ 
+1112 
+ ROBBINSVILLE TWP 
+ Mercer County 
+ 
+1113 
+ WEST WINDSOR TWP 
+ Mercer County 
+ 
+1114 
+ PRINCETON** 
+ Mercer County 
+ 
+**Princeton Boro (1109) and Princeton Twp (1110) merged into one municipality Princeton (1114) effective January 1, 2013. 
+ 
+1201 
+ CARTERET BORO 
+ Middlesex County 
+ 
+1202 
+ CRANBURY TWP 
+ Middlesex County 
+ 
+1203 
+ DUNELLEN BORO 
+ Middlesex County 
+ 
+1204 
+ EAST BRUNSWICK TWP 
+ Middlesex County 
+ 
+1205 
+ EDISON TWP 
+ Middlesex County 
+ 
+1206 
+ HELMETTA BORO 
+ Middlesex County 
+ 
+1207 
+ HIGHLAND PARK BORO 
+ Middlesex County 
+ 
+1208 
+ JAMESBURG BORO 
+ Middlesex County 
+ 
+1209 
+ METUCHEN BORO 
+ Middlesex County 
+ 
+1210 
+ MIDDLESEX BORO 
+ Middlesex County 
+ 
+1211 
+ MILLTOWN BORO 
+ Middlesex County 
+ 
+1212 
+ MONROE TWP 
+ Middlesex County 
+ 
+1213 
+ NEW BRUNSWICK CITY 
+ Middlesex County 
+ 
+1214 
+ NORTH BRUNSWICK TWP 
+ Middlesex County 
+ 
+1215 
+ OLD BRIDGE TWP 
+ Middlesex County 
+ 
+1216 
+ PERTH AMBOY CITY 
+ Middlesex County 
+ 
+1217 
+ PISCATAWAY TWP 
+ Middlesex County 
+ 
+1218 
+ PLAINSBORO TWP 
+ Middlesex County 
+ 
+1219 
+ SAYREVILLE BORO 
+ Middlesex County 
+ 
+1220 
+ SOUTH AMBOY CITY 
+ Middlesex County 
+ 
+1221 
+ SOUTH BRUNSWICK TWP 
+ Middlesex County 
+ 
+1222 
+ SOUTH PLAINFIELD BORO 
+ Middlesex County 
+ 
+1223 
+ SOUTH RIVER BORO 
+ Middlesex County 
+ 
+1224 
+ SPOTSWOOD BORO 
+ Middlesex County 
+ 
+1225 
+ WOODBRIDGE TWP 
+ Middlesex County 
+ 
+1301 
+ ABERDEEN TWP 
+ Monmouth County 
+ 
+1302 
+ ALLENHURST BORO 
+ Monmouth County 
+ 
+1303 
+ ALLENTOWN BORO 
+ Monmouth County 
+ 
+1304 
+ ASBURY PARK CITY 
+ Monmouth County 
+ 
+1305 
+ ATLANTIC HIGHLANDS BORO 
+ Monmouth County 
+ 
+1306 
+ AVON BY THE SEA BORO 
+ Monmouth County 
+ 
+1307 
+ BELMAR BORO 
+ Monmouth County 
+ 
+1308 
+ BRADLEY BEACH BORO 
+ Monmouth County 
+ 
+1309 
+ BRIELLE BORO 
+ Monmouth County 
+ 
+1310 
+ COLTS NECK TOWNSHIP 
+ Monmouth County 
+ 
+1311 
+ DEAL BORO 
+ Monmouth County 
+ 
+1312 
+ EATONTOWN BORO 
+ Monmouth County 
+ 
+1313 
+ ENGLISHTOWN BORO 
+ Monmouth County 
+ 
+1314 
+ FAIR HAVEN BORO 
+ Monmouth County 
+ 
+1315 
+ FARMINGDALE BORO 
+ Monmouth County 
+ 
+1316 
+ FREEHOLD BORO 
+ Monmouth County 
+ 
+1317 
+ FREEHOLD TWP 
+ Monmouth County 
+ 
+1318 
+ HAZLET TWP 
+ Monmouth County 
+ 
+1319 
+ HIGHLANDS BORO 
+ Monmouth County 
+ 
+1320 
+ HOLMDEL TWP 
+ Monmouth County 
+ 
+1321 
+ HOWELL TWP 
+ Monmouth County 
+ 
+1322 
+ INTERLAKEN BORO 
+ Monmouth County 
+ 
+1323 
+ KEANSBURG BORO 
+ Monmouth County 
+ 
+1324 
+ KEYPORT BORO 
+ Monmouth County 
+ 
+1325 
+ LITTLE SILVER BORO 
+ Monmouth County 
+ 
+1326 
+ LOCH ARBOUR VILLAGE 
+ Monmouth County 
+ 
+1327 
+ LONG BRANCH CITY 
+ Monmouth County 
+ 
+1328 
+ MANALAPAN TWP 
+ Monmouth County 
+ 
+1329 
+ MANASQUAN BORO 
+ Monmouth County 
+ 
+1330 
+ MARLBORO TWP 
+ Monmouth County 
+ 
+1331 
+ MATAWAN BORO 
+ Monmouth County 
+ 
+1332 
+ MIDDLETOWN TWP 
+ Monmouth County 
+ 
+1333 
+ MILLSTONE TWP 
+ Monmouth County 
+ 
+1334 
+ MONMOUTH BEACH BORO 
+ Monmouth County 
+ 
+1335 
+ NEPTUNE TWP 
+ Monmouth County 
+ 
+1336 
+ NEPTUNE CITY BORO 
+ Monmouth County 
+ 
+1337 
+ OCEAN TWP 
+ Monmouth County 
+ 
+1338 
+ OCEANPORT BORO 
+ Monmouth County 
+ 
+1339 
+ RED BANK BORO 
+ Monmouth County 
+ 
+1340 
+ ROOSEVELT BORO 
+ Monmouth County 
+ 
+1341 
+ RUMSON BORO 
+ Monmouth County 
+ 
+1342 
+ SEA BRIGHT BORO 
+ Monmouth County 
+ 
+1343 
+ SEA GIRT BORO 
+ Monmouth County 
+ 
+1344 
+ SHREWSBURY BORO 
+ Monmouth County 
+ 
+1345 
+ SHREWSBURY TWP 
+ Monmouth County 
+ 
+1346 
+ LAKE COMO BORO 
+ Monmouth County 
+ 
+1347 
+ SPRING LAKE BORO 
+ Monmouth County 
+ 
+1348 
+ SPRING LAKE HEIGHTS BOR 
+ Monmouth County 
+ 
+1349 
+ TINTON FALLS BORO 
+ Monmouth County 
+ 
+1350 
+ UNION BEACH BORO 
+ Monmouth County 
+ 
+1351 
+ UPPER FREEHOLD TWP 
+ Monmouth County 
+ 
+1352 
+ WALL TWP 
+ Monmouth County 
+ 
+1353 
+ WEST LONG BRANCH BORO 
+ Monmouth County 
+ 
+1401 
+ BOONTON TOWN 
+ Morris County 
+ 
+1402 
+ BOONTON TWP 
+ Morris County 
+ 
+1403 
+ BUTLER BORO 
+ Morris County 
+ 
+1404 
+ CHATHAM BORO 
+ Morris County 
+ 
+1405 
+ CHATHAM TWP 
+ Morris County 
+ 
+1406 
+ CHESTER BORO 
+ Morris County 
+ 
+1407 
+ CHESTER TWP 
+ Morris County 
+ 
+1408 
+ DENVILLE TWP 
+ Morris County 
+ 
+1409 
+ DOVER TOWN 
+ Morris County 
+ 
+1410 
+ EAST HANOVER TWP 
+ Morris County 
+ 
+1411 
+ FLORHAM PARK BORO 
+ Morris County 
+ 
+1412 
+ HANOVER TWP 
+ Morris County 
+ 
+1413 
+ HARDING TWP 
+ Morris County 
+ 
+1414 
+ JEFFERSON TWP 
+ Morris County 
+ 
+1415 
+ KINNELON BORO 
+ Morris County 
+ 
+1416 
+ LINCOLN PARK BORO 
+ Morris County 
+ 
+1417 
+ MADISON BORO 
+ Morris County 
+ 
+1418 
+ MENDHAM BORO 
+ Morris County 
+ 
+1419 
+ MENDHAM TWP 
+ Morris County 
+ 
+1420 
+ MINE HILL TWP 
+ Morris County 
+ 
+1421 
+ MONTVILLE TWP 
+ Morris County 
+ 
+1422 
+ MORRIS TWP 
+ Morris County 
+ 
+1423 
+ MORRIS PLAINS BORO 
+ Morris County 
+ 
+1424 
+ MORRISTOWN TOWN 
+ Morris County 
+ 
+1425 
+ MOUNTAIN LAKES BORO 
+ Morris County 
+ 
+1426 
+ MOUNT ARLINGTON BORO 
+ Morris County 
+ 
+1427 
+ MOUNT OLIVE TWP 
+ Morris County 
+ 
+1428 
+ NETCONG BORO 
+ Morris County 
+ 
+1429 
+ PARSIPPANY TR HLS TWP 
+ Morris County 
+ 
+1430 
+ LONG HILL TWP 
+ Morris County 
+ 
+1431 
+ PEQUANNOCK TWP 
+ Morris County 
+ 
+1432 
+ RANDOLPH TWP 
+ Morris County 
+ 
+1433 
+ RIVERDALE BORO 
+ Morris County 
+ 
+1434 
+ ROCKAWAY BORO 
+ Morris County 
+ 
+1435 
+ ROCKAWAY TWP 
+ Morris County 
+ 
+1436 
+ ROXBURY TWP 
+ Morris County 
+ 
+1437 
+ VICTORY GARDENS BORO 
+ Morris County 
+ 
+1438 
+ WASHINGTON TWP 
+ Morris County 
+ 
+1439 
+ WHARTON BORO 
+ Morris County 
+ 
+1501 
+ BARNEGAT TWP 
+ Ocean County 
+ 
+1502 
+ BARNEGAT LIGHT BORO 
+ Ocean County 
+ 
+1503 
+ BAY HEAD BORO 
+ Ocean County 
+ 
+1504 
+ BEACH HAVEN BORO 
+ Ocean County 
+ 
+1505 
+ BEACHWOOD BORO 
+ Ocean County 
+ 
+1506 
+ BERKELEY TWP 
+ Ocean County 
+ 
+1507 
+ BRICK TWP 
+ Ocean County 
+ 
+1508 
+ TOMS RIVER TWP 
+ Ocean County 
+ 
+1509 
+ EAGLESWOOD TWP 
+ Ocean County 
+ 
+1510 
+ HARVEY CEDARS BORO 
+ Ocean County 
+ 
+1511 
+ ISLAND HEIGHTS BORO 
+ Ocean County 
+ 
+1512 
+ JACKSON TWP 
+ Ocean County 
+ 
+1513 
+ LACEY TWP 
+ Ocean County 
+ 
+1514 
+ LAKEHURST BORO 
+ Ocean County 
+ 
+1515 
+ LAKEWOOD TWP 
+ Ocean County 
+ 
+1516 
+ LAVALLETTE BORO 
+ Ocean County 
+ 
+1517 
+ LITTLE EGG HARBOR TWP 
+ Ocean County 
+ 
+1518 
+ LONG BEACH TWP 
+ Ocean County 
+ 
+1519 
+ MANCHESTER TWP 
+ Ocean County 
+ 
+1520 
+ MANTOLOKING BORO 
+ Ocean County 
+ 
+1521 
+ OCEAN TWP 
+ Ocean County 
+ 
+1522 
+ OCEAN GATE BORO 
+ Ocean County 
+ 
+1523 
+ PINE BEACH BORO 
+ Ocean County 
+ 
+1524 
+ PLUMSTED TWP 
+ Ocean County 
+ 
+1525 
+ POINT PLEASANT BORO 
+ Ocean County 
+ 
+1526 
+ PT PLEASANT BEACH BORO 
+ Ocean County 
+ 
+1527 
+ SEASIDE HEIGHTS BORO 
+ Ocean County 
+ 
+1528 
+ SEASIDE PARK BORO 
+ Ocean County 
+ 
+1529 
+ SHIP BOTTOM BORO 
+ Ocean County 
+ 
+1530 
+ SOUTH TOMS RIVER BORO 
+ Ocean County 
+ 
+1531 
+ STAFFORD TWP 
+ Ocean County 
+ 
+1532 
+ SURF CITY BORO 
+ Ocean County 
+ 
+1533 
+ TUCKERTON BORO 
+ Ocean County 
+ 
+1601 
+ BLOOMINGDALE BORO 
+ Passaic County 
+ 
+1602 
+ CLIFTON CITY 
+ Passaic County 
+ 
+1603 
+ HALEDON BORO 
+ Passaic County 
+ 
+1604 
+ HAWTHORNE BORO 
+ Passaic County 
+ 
+1605 
+ LITTLE FALLS TWP 
+ Passaic County 
+ 
+1606 
+ NORTH HALEDON BORO 
+ Passaic County 
+ 
+1607 
+ PASSAIC CITY 
+ Passaic County 
+ 
+1608 
+ PATERSON CITY 
+ Passaic County 
+ 
+1609 
+ POMPTON LAKES BORO 
+ Passaic County 
+ 
+1610 
+ PROSPECT PARK BORO 
+ Passaic County 
+ 
+1611 
+ RINGWOOD BORO 
+ Passaic County 
+ 
+1612 
+ TOTOWA BORO 
+ Passaic County 
+ 
+1613 
+ WANAQUE BORO 
+ Passaic County 
+ 
+1614 
+ WAYNE TWP 
+ Passaic County 
+ 
+1615 
+ WEST MILFORD TWP 
+ Passaic County 
+ 
+1616 
+ WOODLAND PARK BORO 
+ Passaic County 
+ 
+1701 
+ ALLOWAY TOWNSHIP 
+ Salem County 
+ 
+1702 
+ CARNEYS POINT TOWNSHIP 
+ Salem County 
+ 
+1703 
+ ELMER BORO 
+ Salem County 
+ 
+1704 
+ ELSINBORO TWP 
+ Salem County 
+ 
+1705 
+ LOWER ALLOWAY CREEK TWP 
+ Salem County 
+ 
+1706 
+ MANNINGTON TWP 
+ Salem County 
+ 
+1707 
+ OLDMANS TWP 
+ Salem County 
+ 
+1708 
+ PENNS GROVE BORO 
+ Salem County 
+ 
+1709 
+ PENNSVILLE TWP 
+ Salem County 
+ 
+1710 
+ PILESGROVE TWP 
+ Salem County 
+ 
+1711 
+ PITTSGROVE TWP 
+ Salem County 
+ 
+1712 
+ QUINTON TWP 
+ Salem County 
+ 
+1713 
+ SALEM CITY 
+ Salem County 
+ 
+1714 
+ UPPER PITTSGROVE TWP 
+ Salem County 
+ 
+1715 
+ WOODSTOWN BORO 
+ Salem County 
+ 
+1801 
+ BEDMINSTER TWP 
+ Somerset County 
+ 
+1802 
+ BERNARDS TWP 
+ Somerset County 
+ 
+1803 
+ BERNARDSVILLE BORO 
+ Somerset County 
+ 
+1804 
+ BOUND BROOK BORO 
+ Somerset County 
+ 
+1805 
+ BRANCHBURG TWP 
+ Somerset County 
+ 
+1806 
+ BRIDGEWATER TWP 
+ Somerset County 
+ 
+1807 
+ FAR HILLS BORO 
+ Somerset County 
+ 
+1808 
+ FRANKLIN TWP 
+ Somerset County 
+ 
+1809 
+ GREEN BROOK TWP 
+ Somerset County 
+ 
+1810 
+ HILLSBOROUGH TWP 
+ Somerset County 
+ 
+1811 
+ MANVILLE BORO 
+ Somerset County 
+ 
+1812 
+ MILLSTONE BORO 
+ Somerset County 
+ 
+1813 
+ MONTGOMERY TWP 
+ Somerset County 
+ 
+1814 
+ NORTH PLAINFIELD BORO 
+ Somerset County 
+ 
+1815 
+ PEAPACK GLADSTONE BORO 
+ Somerset County 
+ 
+1816 
+ RARITAN BORO 
+ Somerset County 
+ 
+1817 
+ ROCKY HILL BORO 
+ Somerset County 
+ 
+1818 
+ SOMERVILLE BORO 
+ Somerset County 
+ 
+1819 
+ SO BOUND BROOK BORO 
+ Somerset County 
+ 
+1820 
+ WARREN TWP 
+ Somerset County 
+ 
+1821 
+ WATCHUNG BORO 
+ Somerset County 
+ 
+1901 
+ ANDOVER BORO 
+ Sussex County 
+ 
+1902 
+ ANDOVER TWP 
+ Sussex County 
+ 
+1903 
+ BRANCHVILLE BORO 
+ Sussex County 
+ 
+1904 
+ BYRAM TWP 
+ Sussex County 
+ 
+1905 
+ FRANKFORD TWP 
+ Sussex County 
+ 
+1906 
+ FRANKLIN BORO 
+ Sussex County 
+ 
+1907 
+ FREDON TWP 
+ Sussex County 
+ 
+1908 
+ GREEN TWP 
+ Sussex County 
+ 
+1909 
+ HAMBURG BORO 
+ Sussex County 
+ 
+1910 
+ HAMPTON TWP 
+ Sussex County 
+ 
+1911 
+ HARDYSTON TWP 
+ Sussex County 
+ 
+1912 
+ HOPATCONG BORO 
+ Sussex County 
+ 
+1913 
+ LAFAYETTE TWP 
+ Sussex County 
+ 
+1914 
+ MONTAGUE TWP 
+ Sussex County 
+ 
+1915 
+ NEWTON TOWN 
+ Sussex County 
+ 
+1916 
+ OGDENSBURG BORO 
+ Sussex County 
+ 
+1917 
+ SANDYSTON TWP 
+ Sussex County 
+ 
+1918 
+ SPARTA TWP 
+ Sussex County 
+ 
+1919 
+ STANHOPE BORO 
+ Sussex County 
+ 
+1920 
+ STILLWATER TWP 
+ Sussex County 
+ 
+1921 
+ SUSSEX BORO 
+ Sussex County 
+ 
+1922 
+ VERNON TWP 
+ Sussex County 
+ 
+1923 
+ WALPACK TWP 
+ Sussex County 
+ 
+1924 
+ WANTAGE TWP 
+ Sussex County 
+ 
+2001 
+ BERKELEY HEIGHTS TWP 
+ Union County 
+ 
+2002 
+ CLARK TWP 
+ Union County 
+ 
+2003 
+ CRANFORD TWP 
+ Union County 
+ 
+2004 
+ ELIZABETH CITY 
+ Union County 
+ 
+2005 
+ FANWOOD BORO 
+ Union County 
+ 
+2006 
+ GARWOOD BORO 
+ Union County 
+ 
+2007 
+ HILLSIDE TWP 
+ Union County 
+ 
+2008 
+ KENILWORTH BORO 
+ Union County 
+ 
+2009 
+ LINDEN CITY 
+ Union County 
+ 
+2010 
+ MOUNTAINSIDE BORO 
+ Union County 
+ 
+2011 
+ NEW PROVIDENCE BORO 
+ Union County 
+ 
+2012 
+ PLAINFIELD CITY 
+ Union County 
+ 
+2013 
+ RAHWAY CITY 
+ Union County 
+ 
+2014 
+ ROSELLE BORO 
+ Union County 
+ 
+2015 
+ ROSELLE PARK BORO 
+ Union County 
+ 
+2016 
+ SCOTCH PLAINS TWP 
+ Union County 
+ 
+2017 
+ SPRINGFIELD TWP 
+ Union County 
+ 
+2018 
+ SUMMIT CITY 
+ Union County 
+ 
+2019 
+ UNION TWP 
+ Union County 
+ 
+2020 
+ WESTFIELD TOWN 
+ Union County 
+ 
+2021 
+ WINFIELD TWP 
+ Union County 
+ 
+2101 
+ ALLAMUCHY TWP 
+ Warren County 
+ 
+2102 
+ ALPHA BORO 
+ Warren County 
+ 
+2103 
+ BELVIDERE TOWN 
+ Warren County 
+ 
+2104 
+ BLAIRSTOWN TWP 
+ Warren County 
+ 
+2105 
+ FRANKLIN TWP 
+ Warren County 
+ 
+2106 
+ FRELINGHUYSEN TWP 
+ Warren County 
+ 
+2107 
+ GREENWICH TWP 
+ Warren County 
+ 
+2108 
+ HACKETTSTOWN TOWN 
+ Warren County 
+ 
+2109 
+ HARDWICK TWP 
+ Warren County 
+ 
+2110 
+ HARMONY TWP 
+ Warren County 
+ 
+2111 
+ HOPE TWP 
+ Warren County 
+ 
+2112 
+ INDEPENDENCE TWP 
+ Warren County 
+ 
+2113 
+ KNOWLTON TWP 
+ Warren County 
+ 
+2114 
+ LIBERTY TWP 
+ Warren County 
+ 
+2115 
+ LOPATCONG TWP 
+ Warren County 
+ 
+2116 
+ MANSFIELD TWP 
+ Warren County 
+ 
+2117 
+ OXFORD TWP 
+ Warren County 
+ 
+2119 
+ PHILLIPSBURG TOWN 
+ Warren County 
+ 
+2120 
+ POHATCONG TWP 
+ Warren County 
+ 
+2121 
+ WASHINGTON BORO 
+ Warren County 
+ 
+2122 
+ WASHINGTON TWP 
+ Warren County 
+ 
+2123 
+ WHITE TWP 
+ Warren County 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+   
+ 
+ 
+ 
+
