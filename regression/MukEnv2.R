@@ -204,13 +204,13 @@ mlreg <- function(df, fit, num) {
     ))
   }
   cat("\n\nScatter Plot Matrix \n")
-  scatterplotMatrix(
-    df,
-    id.n = 4,
-    main = "Scatter Plot Matrix",
-    use = "pairwise.complete.obs",
-    spread = FALSE
-  )
+  # scatterplotMatrix(
+  #   df,
+  #   id.n = 4,
+  #   main = "Scatter Plot Matrix",
+  #   use = "pairwise.complete.obs",
+  #   spread = FALSE
+  # )
   #s3d <-scatterplot3d(df[2],df[3],df[1], pch=16, highlight.3d=TRUE,type="h", main="3D Scatterplot")
   #scatterplotMatrix(df, id.n = 4, diagonal = "histogram", main = "Scatter Plot Matrix")
   #scatterplotMatrix(df, id.n = 4, diagonal = "qqplot", main = "Scatter Plot Matrix")
@@ -223,15 +223,15 @@ mlreg <- function(df, fit, num) {
     main = paste("Correlation Chart")
   )
   cat("\n\nCorrelation Diagrams \n")
-  corrgram(
-    df,
-    #order = TRUE,
-    main = "Correlation Diagram",
-    lower.panel = panel.shade,
-    upper.panel = panel.cor,
-    text.panel = panel.txt,
-    diag.panel = panel.density
-  )
+  # corrgram(
+  #   df,
+  #   #order = TRUE,
+  #   main = "Correlation Diagram",
+  #   lower.panel = panel.shade,
+  #   upper.panel = panel.cor,
+  #   text.panel = panel.txt,
+  #   diag.panel = panel.density
+  # )
   cat("\n\nCorrelation Plot \n")
   corrplot(cor(dfn),
            method = "number",
@@ -248,7 +248,8 @@ mlreg <- function(df, fit, num) {
   print(ggscatmat(df[vars]) + ggtitle("Correlation Matrix2"))
   #cat("\n\nScatter Plot of variables\n")
   #ggpairs(df[vars],title = "Scatter Plot for most variables",lower = list(continuous = "smooth"))
-  invisible(readline(prompt = "Press [enter] to continue"))
+  #invisible(readline(prompt = "Press [enter] to continue"))
+  
   cat("\n#------MODEL--------------------------------------------------\n")
   cat("\n\nLinear Regression Model \n")
   # the points
@@ -371,7 +372,7 @@ mlreg <- function(df, fit, num) {
   )
   abline(v = F.stat, lwd = 2)
   cat("\n\nTwo-tailed t-test Ctitical Value for alpha 5%\n")
-  print(t.stat <- qt(alpha / 2, df2)) # P[X ≤ x]
+  print(t.stat <- qt(alpha / 2, df2)) # P[X ??? x]
   curve(
     dt(x = x, df = df2),
     from = -4.5,
@@ -442,24 +443,24 @@ mlreg <- function(df, fit, num) {
   } else
     outt <- NULL
   print(df[outt, ])
-  cat("\n\nInfluce Plot Outliers \n")
+  # cat("\n\nInfluce Plot Outliers \n")
   infout <- NULL
   par <- old.par
   infout <-
     influencePlot(
       fit,
-      labels = rownames(dfrn),
+      label = rownames(dfrn),
       main = paste("Influence Plot\n", frdeparse),
       sub = "Circle size is proportional to Cook's Distance"
     )
   print(infout)
   cat("\n\nInfluce Index Plot \n")
-  # influenceIndexPlot(
-  #   fit,
-  #   id.n = 3,
-  #   labels = rownames(dfrn),
-  #   main = paste("Influence Index Diagnostic Plots\n", frdeparse)
-  # )
+  influenceIndexPlot(
+    fit,
+    id.n = 3,
+    label = rownames(dfrn),
+    main = paste("Influence Index Diagnostic Plots\n", frdeparse)
+  )
   cat("\n\nInfluence Plot RowNames \n")
   infoutrn <- NULL
   infoutrn <- rownames(infout)
@@ -467,14 +468,14 @@ mlreg <- function(df, fit, num) {
   cat("\n\nIntersection of OutlierTest and Influence Plot Outliers\n")
   ret <- intersect(outt, infoutrn)
   print(ret)
-  #cat("\n\nInfluence Measures from AutoPlot\n")
-  #print(influence.measures(fit))
+  cat("\n\nInfluence Measures from AutoPlot\n")
+  print(influence.measures(fit))
   cat("\n\nAdded Value Plot to asses impact of influence observations \n")
   avPlots(
     fit,
     ask = FALSE,
     id.n = 2,
-    labels = rownames(dfrn),
+    label = rownames(dfrn),
     main = "Added Value Plot to asses impact of influence observations"
   )
   cat("\n#------DIAGNOSTIC PLOTS-------------------------------------------\n")
@@ -489,6 +490,7 @@ mlreg <- function(df, fit, num) {
       label.repel = TRUE
     )
   )
+  #invisible(readline(prompt = "Press [enter] to continue"))
   cat("\n\nQQ Plot to Test the Normality\n")
   print(
     qqPlot(
@@ -496,7 +498,7 @@ mlreg <- function(df, fit, num) {
       id.n = 5,
       simulate = TRUE,
       id.location = "ab",
-      labels = rownames(dfrn),
+      label = rownames(dfrn),
       main = paste("QQ Plot of Studentized Residuals\n",
                    frdeparse),
       pch = 19
@@ -520,7 +522,7 @@ mlreg <- function(df, fit, num) {
     cat("\n\nComponent plus Residual Plots for Linearity Assumption\n")
     crPlots(fit,
             id.n = 3,
-            labels = rownames(dfrn),
+            label = rownames(dfrn),
             main = "Component + Residual Plots (Partial Residual Plots)")
   }
   cat(
@@ -533,7 +535,7 @@ mlreg <- function(df, fit, num) {
     spreadLevelPlot(
       fit,
       id.n = 3,
-      labels = rownames(dfrn),
+      label = rownames(dfrn),
       main = "Spread Level Plot for Assesing Constant Variance Assumption"
     )
   )
@@ -614,8 +616,8 @@ powerT <- function(df, fit, num) {
     cat("\n**********Variable# ", i, "\n")
     print(summary(powerTransform(dfn[i])))
   }
-  cat("\n\nProfile log-likelihood function for \\λ\n")
-  print(boxCox(fit, main = "Profile log-likelihood function for λ"))
+  cat("\n\nProfile log-likelihood function for \\??\n")
+  print(boxCox(fit, main = "Profile log-likelihood function for ??"))
   if (sum(signif(dfn < 0), na.rm = TRUE) == 0) {
     cat("\n\nBoxTidwell Test: Transforming X Variables if violates normality assumption\n")
     print(boxTidwell(fr, data = df))
