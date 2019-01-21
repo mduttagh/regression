@@ -212,8 +212,8 @@ mlreg <- function(df, fit, num) {
   #   spread = FALSE
   # )
   #s3d <-scatterplot3d(df[2],df[3],df[1], pch=16, highlight.3d=TRUE,type="h", main="3D Scatterplot")
-  #scatterplotMatrix(df, id.n = 4, diagonal = "histogram", main = "Scatter Plot Matrix")
-  #scatterplotMatrix(df, id.n = 4, diagonal = "qqplot", main = "Scatter Plot Matrix")
+  #catterplotMatrix(df, id.n = 4, diagonal = "histogram", main = "Scatter Plot Matrix")
+  #catterplotMatrix(df, id.n = 4, diagonal = "qqplot", main = "Scatter Plot Matrix")
   par(mfrow = c(2, 2))
   cat("\n\nCorrelation Diagram")
   chart.Correlation(
@@ -223,15 +223,15 @@ mlreg <- function(df, fit, num) {
     main = paste("Correlation Chart")
   )
   cat("\n\nCorrelation Diagrams \n")
-  # corrgram(
-  #   df,
-  #   #order = TRUE,
-  #   main = "Correlation Diagram",
-  #   lower.panel = panel.shade,
-  #   upper.panel = panel.cor,
-  #   text.panel = panel.txt,
-  #   diag.panel = panel.density
-  # )
+  corrgram(
+    df,
+    #order = TRUE,
+    main = "Correlation Diagram",
+    lower.panel = panel.shade,
+    upper.panel = panel.cor,
+    text.panel = panel.txt,
+    diag.panel = panel.density
+  )
   cat("\n\nCorrelation Plot \n")
   corrplot(cor(dfn),
            method = "number",
@@ -246,9 +246,9 @@ mlreg <- function(df, fit, num) {
     ) + ggtitle("Correlation Matrix1")
   )
   print(ggscatmat(df[vars]) + ggtitle("Correlation Matrix2"))
-  #cat("\n\nScatter Plot of variables\n")
-  #ggpairs(df[vars],title = "Scatter Plot for most variables",lower = list(continuous = "smooth"))
-  #invisible(readline(prompt = "Press [enter] to continue"))
+  cat("\n\nScatter Plot of variables\n")
+  ggpairs(df[vars],title = "Scatter Plot for most variables",lower = list(continuous = "smooth"))
+  invisible(readline(prompt = "Press [enter] to continue"))
   
   cat("\n#------MODEL--------------------------------------------------\n")
   cat("\n\nLinear Regression Model \n")
@@ -311,19 +311,19 @@ mlreg <- function(df, fit, num) {
     ))
   }
   cat("\n\nScatter Plot of Residuals vs. Predictors\n")
-  # print(
-  #   residualPlots(
-  #     fit,
-  #     id.n = 5,
-  #     type = "rstudent",
-  #     linear = TRUE,
-  #     smoother = loessLine,
-  #     quadratic = FALSE,
-  #     labels = rownames(dfrn),
-  #     main = "Scatter Plot of Studentized Residuals vs. Predictors",
-  #     lwd = 2
-  #   )
-  # )
+  print(
+    residualPlots(
+      fit,
+      id.n = 5,
+      type = "rstudent",
+      linear = TRUE,
+      smoother = loessLine,
+      quadratic = FALSE,
+      label = rownames(dfrn),
+      main = "Scatter Plot of Studentized Residuals vs. Predictors",
+      lwd = 2
+    )
+  )
   if (length(fit$residuals) >= 3 &
       length(fit$residuals) <= 5000) {
     cat("\n\nShapiro-Wilk Normality Test of Residuals\n")
@@ -390,7 +390,7 @@ mlreg <- function(df, fit, num) {
   )
   abline(v = c(-abs(t.stat), abs(t.stat)), lwd = 2)
   prob.tcut(df2, alpha = alpha) #plot t-distribution with normal curve
-  dev.set(which = dev.prev())
+  #dev.set(which = dev.prev())
   par(old.par)
   cat(
     "\n#------MULTI-COLLINEARITY------------------------------------------------\n"
@@ -433,6 +433,7 @@ mlreg <- function(df, fit, num) {
   cat(
     "\n#------INFLUCIAL OUTLIERS-----------------------------------------------\n"
   )
+  par(old.par)
   cat("\n\nOutlier Test \n")
   out <- NULL
   out <- outlierTest(fit, digits = 4, labels = rownames(dfrn))
@@ -454,6 +455,7 @@ mlreg <- function(df, fit, num) {
       sub = "Circle size is proportional to Cook's Distance"
     )
   print(infout)
+  par(old.par)
   cat("\n\nInfluce Index Plot \n")
   influenceIndexPlot(
     fit,
@@ -469,6 +471,7 @@ mlreg <- function(df, fit, num) {
   ret <- intersect(outt, infoutrn)
   print(ret)
   cat("\n\nInfluence Measures from AutoPlot\n")
+  par(old.par)
   print(influence.measures(fit))
   cat("\n\nAdded Value Plot to asses impact of influence observations \n")
   avPlots(
@@ -480,6 +483,7 @@ mlreg <- function(df, fit, num) {
   )
   cat("\n#------DIAGNOSTIC PLOTS-------------------------------------------\n")
   cat("\n\nAutoPlot for Regression Model \n")
+  par(old.par)
   print(
     autoplot(
       fit,
@@ -492,6 +496,7 @@ mlreg <- function(df, fit, num) {
   )
   #invisible(readline(prompt = "Press [enter] to continue"))
   cat("\n\nQQ Plot to Test the Normality\n")
+  par(old.par)
   print(
     qqPlot(
       fit,
@@ -506,6 +511,7 @@ mlreg <- function(df, fit, num) {
   )
   
   # distribution of studentized residuals
+  par(old.par)
   print(
     ggpubr::gghistogram(
       studres(fit),
@@ -776,7 +782,6 @@ check_ts <- function (ts.stdres, fit, dfrn, iteration) {
   cat ("\n\nPrint Grid:", iteration, "\n")
   grid.arrange(p2, p3, p4, ncol = 2, nrow = 2)
   cat("\n\nQQPlot of Standardized Residuals:", iteration, "\n")
-  par(old.par)
   print(
     qqPlot(
       std.res,
