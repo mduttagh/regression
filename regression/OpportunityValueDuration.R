@@ -6,9 +6,12 @@ ifelse (!exists("mlreg", mode = "function"),
 df <- read.csv("~/Oppor Value Duration.csv")
 View(df)
 #CorrCoef <- filter (CorrCoef, CorrCoef$MaxDate != "")
-#View(df)
 df1 <- na.omit(df)
-fit1 <- lm(ProjectDurationLog ~ CurrencyCode + OpportunityValueLog, data = df1)
+vars <- colnames(df1)
+df1 <- df1[c(4,7:8)]
+#df1 <- df1[which (df1$Currency.Code =="USD"),]
+  
+fit1 <- lm(ProjectDurationLog ~ Currency.Code + OpportunityValueLog, data = df1)
 out1 <- NULL
 out1 <- mlreg(df = df1,
               fit = fit1,
@@ -19,7 +22,7 @@ print(tidy(fit1, conf.int = TRUE))
 df2 <- df1
 out2 <- out1
 df2 <- subset(df2, !(row.names(df2) %in% out2))
-fit2 <- lm(ProjectDurationLog ~ CurrencyCode + OpportunityValueLog, data = df2)
+fit2 <- lm(ProjectDurationLog ~ Currency.Code + OpportunityValueLog, data = df2)
 out2 <- NULL
 out2 <- mlreg(df = df2,
               fit = fit2,
